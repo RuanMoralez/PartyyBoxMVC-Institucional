@@ -1,0 +1,2434 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    
+    /*
+	font: inherit;
+    vertical-align: baseline;
+    */
+}
+/* HTML5 display-role reset for older browsers */  
+
+.remove-scroll{
+    overflow: hidden;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    background: #fff6e5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Botao Topo*/
+
+.link-up{
+    font-size: 2.5em !important;
+    padding:5px;
+    position:fixed;
+    top: 83%;
+    right:30px;
+    display:none;
+    font-size: 30px;
+    z-index: 1 !important;
+}
+
+.link-up-whats{
+    top: 20%;
+    color:#32CD32;
+}
+
+.link-up-face{
+    top: 30%;
+}
+
+.link-up-insta{
+    top: 40%;
+    color:#B22222;
+
+}
+
+.btn-enviar{
+    border: 0 !important;
+}
+
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) {
+    
+/*-------- Menu Social Vertical --------*/
+
+    .link-up-whats{
+        display: none !important;
+    }
+    .link-up-face{
+        display: none !important;
+    }
+    .link-up-insta{
+        display: none !important;
+    }
+
+/*-------- Menu Mobile --------*/
+    .menu{
+        width: 100%;
+        background-color: #c31181 !important;        
+
+    }
+
+    .menu-mobile{
+        text-align: left;
+    }
+
+    .menu-mobile li{  
+        border-bottom: 1px solid #D2691E; 
+    }
+
+    .menu-mobile ul li:last-child {
+        border-bottom: 0;
+    } 
+
+    .menu-mobile ul {
+        margin-top: 30px !important;
+    }
+
+    .btn-mobile{
+        margin-left: 5px !important;
+    }
+
+    .menu ul li{
+        list-style: none;
+        padding:10px;
+        background-color:#c31181;
+        cursor: pointer !important;
+    }
+
+    .menu ul li:hover{
+        background: #f6a20b;  
+        cursor: pointer !important;
+    }
+
+    .menu ul li a{
+        color:#fff;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu ul li a:hover{
+        text-decoration: none;
+        cursor: pointer !important;
+    }
+
+    .menu-social{
+        padding-right: 20px;
+    }
+
+    .menu-social i{
+        color:#fff;
+        font-size:1.8em;
+    }
+
+    .menu-social li {
+        list-style: none;
+        float: left;
+    }
+
+    .menu-social li{
+        padding: 5px 20px !important;
+        color:#000;
+    }
+
+    .none-desktop{
+        display: none;
+    }
+
+
+
+    /* Submenu Sobre */
+
+    .menu-mobile li ul{
+        display: none;
+    }
+
+
+    .btn-sobre{
+        border: none;
+        background: none;
+        color:#fff;
+        padding:0;
+    }
+    
+    .menu-mobile li:hover ul, .menu-mobile li.over ul{
+        display:block;
+    }
+
+    .sobre-submenu a{
+        color:#FFF !important;
+    }
+
+    .sobre-submenu li{
+        background:#f6a20b !important;
+        cursor: pointer !important;
+    }
+
+    .sobre-submenu li:hover{
+        background: #c31181 !important;
+        display: block !important;
+        cursor: pointer !important;
+    }
+
+    /*-------- Logo --------*/
+    .logo{
+        padding-top:100px;
+        padding-bottom:40px;
+        text-align: center;
+    }
+    .logo img {
+        width: 70px !important;
+        height: 80px !important;
+    }
+
+    .logo h3{
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 1.5em;
+        color: #c31181;
+        padding-top:10px;
+    }
+    
+    .logo p{
+        font-size:10px;
+        color:dimgrey;
+        padding-bottom: 1%;
+    }
+
+    /*-------- Menu Desktop --------*/
+    .menu-desktop{
+        display: none;
+    }
+
+    /*-------- Slide --------*/
+    .slide-box{
+        height: 250px;
+        /*border:6px solid #f6a20b;*/
+    }
+
+    
+    .box1{
+        background-image: url("../img/slide/cap.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box2{
+        background-image: url("../img/slide/panda.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box3{
+        background-image: url("../img/slide/bud.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .indicador{
+        padding:10px;
+    }
+
+    .none-slide-desktop{
+        display: none;
+    }
+
+    /*-------- Sobre Festa na Caixa --------*/
+    .conteudo-sobre{
+        margin: 30px 0;
+        background-color:#f6a20b;
+        padding:60px 20px;
+        text-align: center;
+        color:#fff
+    }
+
+    .conteudo-sobre img{
+        width: 100% !important;
+        height: 250px !important;
+        border: 5px solid #fff;
+    }
+
+    .conteudo-sobre h3{
+        font-weight: bolder;
+        font-size: 1.5em;
+        padding-top:30px;
+        padding-bottom:15px;
+        text-align: left;
+    }
+
+    .conteudo-sobre p{
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    .conteudo-sobre a {
+        padding: 8px 10px;
+        background: #fff;
+        color: #f6a20b;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .conteudo-sobre a:hover {
+        text-decoration: none;
+        color: #c31181;
+    }
+    
+
+    /*-------- Lista de Produtos Caixa --------*/    
+    .lista-produto{
+        text-align: center;
+        margin: 10px 10px 10px 10px;
+        background-color: #fff;
+
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    }
+
+    .lista-produto img{
+        width: 100%;
+        height: 200px;
+        position: center;
+    }
+
+    .produto{
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px;
+    }
+
+    .caixa-produto-0{
+        background-image: url("../img/festa_caixa/sp.jpeg");
+    }
+
+    .caixa-produto-1{
+        background-image: url("../img/festa_caixa/cap.jpg");
+    }
+
+    .caixa-produto-2{
+        background-image: url("../img/festa_caixa/lol.jpg");
+    }
+
+    .caixa-produto-3{
+        background-image: url("../img/festa_caixa/urso.jpeg");
+    }
+
+    .descricao-produto{
+        text-align: left;
+        padding:20px;   
+    }
+
+    .descricao-produto h3{
+        font-weight: 600;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .descricao-produto p {
+        padding-bottom: 40px;
+    }
+    
+    .descricao-produto a{
+        padding: 8px 10px;
+        background: #f6a20b;
+        color: #fff;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+
+    /*-------- Sobre Cesta --------*/
+    .cesta{
+        background: #c31181 !important;
+    }
+
+    .cesta h3{
+        text-align: center;
+    }
+
+    .cesta img{
+        width: 75% !important;
+        height: 265px !important;
+        border-radius: 50%;
+    }
+
+    .cesta a{
+        color: #c31181 !important;
+    }
+
+    .cesta a:hover{
+        color:#f6a20b !important;
+    }
+
+    /*-------- Lista Cesta --------*/
+
+    .cesta-produto-0{
+        background-image: url("../img/cesta/cafe_manha.jpeg");
+    }
+
+    .cesta-produto-1{
+        background-image: url("../img/cesta/panda.jpg");
+    }
+
+    .cesta-produto-2{
+        background-image: url("../img/cesta/cafe_manha2.jpeg");
+    }
+
+    .cesta-produto-3{
+        background-image: url("../img/cesta/mamae_bebe.jpg");
+    }
+
+        
+    /*-------- Vantagem --------*/
+    .vantagem{
+        text-align: center;
+        padding-top:80px;
+    }
+
+    .vantagem h3{
+        padding-bottom: 60px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    .vantagem i{
+        border-radius: 100%;
+        background: #c31181;
+        color: #fff;
+        padding:30px;
+        font-size:2em;
+    }
+
+    .vantagem p{
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+
+    /*-------- Sobre Buque de cocholate --------*/
+
+    .sobre-buque{
+        padding: 30px;
+        margin: 20px 0;
+        background-color:#c31181;
+        color:#fff;
+    }
+
+    .sobre-buque h3{
+        font-weight: 600;
+        font-size: 1.3em;
+        padding:30px 0;
+    }
+
+    .sobre-buque img{
+        width: 100%;
+        height: 250px;
+        margin-bottom: 20px;
+        border: 5px solid #fff; 
+    }
+
+    .sobre-buque a {
+        padding: 8px 10px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .sobre-buque a:hover {
+        text-decoration: none;
+        color: #f6a20b;
+    }
+
+    /*-------- Lista Buque --------*/
+
+    .buque-produto-0{
+        background-image: url("../img/buque_chocolate/romantico.jpeg");
+    }
+
+    .buque-produto-1{
+        background-image: url("../img/buque_chocolate/azul.jpeg");
+    }
+
+    .buque-produto-2{
+        background-image: url("../img/buque_chocolate/romantico2.jpeg");
+    }
+
+    .buque-produto-3{
+        background-image: url("../img/buque_chocolate/dia_mae.jpeg");
+    }
+
+    /*-------- Comentario --------*/
+    .conteudo-comentario{
+        padding: 30px;
+        background: #f6a20b;
+    }
+
+    .conteudo-comentario h3 {
+        text-align: center;
+        padding: 30px 0 80px 0;
+        color:#fff;
+        font-size: 1.5em;
+    }
+
+    .comentario{
+        padding: 30px;
+        font-size: 15px;
+        font-style: italic;
+        background: #fff;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+
+        margin-bottom:25px;
+    }
+    
+    .comentario i {
+        font-style: normal;
+    }
+    
+    .comentario strong{
+        font-style: normal;
+        font-size: 15px;
+    }
+    
+    .img-comentario{
+        padding-left: 10px;
+        font-size: 25px;
+        color:#fff;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+
+    /*-------- Contato --------*/
+    .contato{
+        padding:14% 10% 10% 10%;
+        /*padding-left:10%;*/
+        background: #c31181;
+        color:#fff;
+        font-size:15px;
+    }
+    
+    .contato-descricao h3 {
+        padding-bottom: 5%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    
+    .contato-mensagem h3 {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    
+    .contato-descricao ul{
+        padding:0px;
+        list-style: none;
+    }
+    
+    .contato-descricao li{
+        padding-bottom:1em;
+        list-style: none;
+    }
+    
+    .contato-descricao i{
+        padding-right: 1em;
+    }
+    
+    .btn-enviar {
+        padding: 8px 20px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .btn-enviar:hover{
+        text-decoration: none;
+        color:#f6a20b;
+    }
+
+    .contato textarea{
+        margin-bottom:25px;
+    }
+
+    /* Rodapé */
+    .footer{
+        text-align: center;
+        padding: 30px 20px;
+        background: #FFF;
+        color:#c31181;
+        font-size: 15px;
+    }
+    
+    .footer h5 {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        font-size: 1em;
+        font-weight: 600;
+    }
+    
+    .footer a {
+        color:#c31181;
+    }
+    
+    .footer a:hover{
+        color: #f6a20b;
+    }
+    
+    .footer ul{
+        padding:0;
+    }
+    
+    .footer ul li {
+        list-style: none;
+        font-size: 0.8em;
+    }
+
+    .institucional ul li{
+        padding:5px;
+    }
+
+    .ajuda ul li{
+        padding:5px;
+    }
+    
+    .social ul li {
+        display: inline;
+        padding: 5px;
+    }
+    
+    .social i{
+        color:#c31181;
+        font-size: 20px;
+    }
+    
+    .pagamento{
+        padding-top: 60px;
+        text-align: center;
+    }
+    
+    .pagamento ul li{
+        display: inline;
+        font-size: 20px;
+    }
+    
+    .cartao{
+        padding-bottom: 20px;
+    }
+    
+    .copy p{
+        font-size: 0.7em;
+    }    
+
+    /*------ link WhatsApp altera dependendo do tamanho da tela ------*/
+    .wp-web{
+        display: none;
+    }
+
+}   
+
+/* Telefones em paisagem a tablet em retrato */
+@media (min-width: 481px) and (max-width: 767px) {
+    
+    /*-------- Menu Social Vertical --------*/
+    .link-up{
+        top: 85% !important;
+    }
+    .link-up-whats{
+        display: none !important;
+    }
+    .link-up-face{
+        display: none !important;
+    }
+    .link-up-insta{
+        display: none !important;
+    }
+
+    /*-------- Menu Mobile --------*/
+    .menu{
+        width: 100%;
+        background-color: #c31181 !important;
+    }
+
+    .menu-mobile{
+        text-align: left;
+    }
+
+    .menu-mobile li{  
+        border-bottom: 1px solid #D2691E; 
+    }
+
+    .menu-mobile li:last-child {
+        border-bottom: 0;
+    } 
+
+    .menu-mobile ul {
+        margin-top: 30px !important;
+    }
+
+    .btn-mobile{
+        margin-left: 5px !important;
+    }
+
+    .menu ul li{
+        list-style: none;
+        padding:10px;
+        background-color:#c31181;
+        cursor: pointer !important;
+    }
+
+    .menu ul li:hover{
+        background: #f6a20b;  
+    }
+
+    .menu ul li a{
+        color:#fff;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu ul li a:hover{
+        text-decoration: none;
+    }
+
+    .menu-social{
+        padding-right: 20px;
+    }
+
+    .menu-social i{
+        color:#fff;
+        font-size:1.8em;
+    }
+
+    .menu-social li {
+        list-style: none;
+        float: left;
+    }
+
+    .menu-social li{
+        padding: 5px 20px !important;
+        color:#000;
+    }
+
+    .none-desktop{
+        display: none;
+    }
+
+
+
+    /* Submenu Sobre */
+
+    .btn-sobre{
+        border: none;
+        background: none;
+        color:#fff;
+        padding:0;
+    }
+
+    .menu-mobile li ul{
+        display: none;
+    }
+
+    .menu-mobile ul li:last-child {
+        border-bottom: 0;
+    } 
+    
+    .menu-mobile li:hover ul, .menu-mobile li.over ul{
+        display:block;
+    }
+
+    .sobre-submenu a{
+        color:#FFF !important;
+    }
+
+    .sobre-submenu li{
+        background:#f6a20b !important;
+        cursor: pointer !important;
+    }
+
+    .sobre-submenu li:hover{
+        background: #c31181 !important;
+        display: block !important;
+        cursor: pointer !important;
+    }
+
+    /*-------- Logo --------*/
+    .logo{
+        padding-top:100px;
+        padding-bottom:40px;
+        text-align: center;
+    }
+    .logo img {
+        width: 70px !important;
+        height: 80px !important;
+    }
+
+    .logo h3{
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 1.5em;
+        color: #c31181;
+        padding-top:10px;
+    }
+
+    .logo p{
+        font-size:10px;
+        color:dimgrey;
+        padding-bottom: 1%;
+    }
+
+    /*-------- Menu Desktop --------*/
+    .menu-desktop{
+        display: none;
+    }
+
+
+    /*-------- Slide --------*/
+    .slide-box{
+        height: 250px;
+        /*border:6px solid #f6a20b;*/
+    }
+
+    
+    .box1{
+        background-image: url("../img/slide/cap.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box2{
+        background-image: url("../img/slide/panda.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box3{
+        background-image: url("../img/slide/bud.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .indicador{
+        padding:10px;
+    }
+
+    .none-slide-desktop{
+        display: none;
+    }
+
+
+    /*-------- Sobre Festa na Caixa --------*/
+    .conteudo-sobre{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color:#f6a20b;
+        padding:90px 30px;
+        text-align: center;
+        color:#fff
+    }
+
+    .conteudo-sobre img{
+        width: 80% !important;
+        height: 90% !important;
+        border: 5px solid #fff;
+    }
+
+    .conteudo-sobre h3{
+        font-weight: bolder;
+        font-size: 1.5em;
+        
+        padding-bottom:30px;
+    }
+
+    .conteudo-sobre p{
+        padding-bottom: 20px;
+        text-align: left;
+    }
+
+    .conteudo-sobre a {
+        margin: 60px;
+        padding: 8px 10px;
+        background: #fff;
+        color: #f6a20b;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .conteudo-sobre a:hover {
+        text-decoration: none;
+        color: #c31181;
+    }
+
+
+    /*-------- Lista de Produtos Caixa --------*/    
+    .lista-produto{
+        text-align: center;
+        margin: 10px 0px;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    }
+
+    .lista-produto img{
+        width: 100%;
+        height: 200px;
+        position: center;
+    }
+
+    .produto{
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px;
+    }
+
+    .caixa-produto-0{
+        background-image: url("../img/festa_caixa/sp.jpeg");
+    }
+
+    .caixa-produto-1{
+        background-image: url("../img/festa_caixa/cap.jpg");
+    }
+
+    .caixa-produto-2{
+        background-image: url("../img/festa_caixa/lol.jpg");
+    }
+
+    .caixa-produto-3{
+        background-image: url("../img/festa_caixa/urso.jpeg");
+    }
+
+    .descricao-produto{
+        text-align: left;
+        padding:20px;   
+    }
+
+    .descricao-produto h3{
+        font-weight: 600;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .descricao-produto p {
+        padding-bottom: 40px;
+    }
+
+    .descricao-produto a{
+        padding: 8px 10px;
+        background: #f6a20b;
+        color: #fff;
+        border-radius:5px;
+        font-size: 1em;
+    }
+  
+
+    /*-------- Sobre Cesta --------*/
+    .cesta{
+        background: #c31181 !important;
+    }
+
+    .cesta img{
+        width: 250px !important;
+        height: 260px !important;
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    .cesta a{
+        color: #c31181 !important;
+    }
+
+    .cesta a:hover{
+        color:#f6a20b !important;
+    }
+
+    /*-------- Lista Cesta --------*/
+
+    .cesta-produto-0{
+        background-image: url("../img/cesta/cafe_manha.jpeg");
+    }
+
+    .cesta-produto-1{
+        background-image: url("../img/cesta/panda.jpg");
+    }
+
+    .cesta-produto-2{
+        background-image: url("../img/cesta/cafe_manha2.jpeg");
+    }
+
+    .cesta-produto-3{
+        background-image: url("../img/cesta/mamae_bebe.jpg");
+    }
+    
+
+    /*-------- Vantagem --------*/
+    .vantagem{
+        text-align: center;
+        padding-top:80px;
+    }
+
+    .vantagem h3{
+        padding-bottom: 60px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    .vantagem i{
+        border-radius: 100%;
+        background: #c31181;
+        color: #fff;
+        padding:30px;
+        font-size:2em;
+    }
+
+    .vantagem p{
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+    /*-------- Sobre Buque de cocholate --------*/
+
+    .sobre-buque{
+        padding: 30px;
+        margin: 20px 0;
+        background-color:#c31181;
+        color:#fff;
+    }
+
+    .sobre-buque h3{
+        font-weight: 600;
+        font-size: 1.3em;
+        padding:30px 0;
+    }
+
+    .sobre-buque img{
+        width: 100%;
+        height: 350px;
+        margin-bottom: 20px;
+        border: 5px solid #fff; 
+    }
+
+    .sobre-buque a {
+        padding: 8px 10px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .sobre-buque a:hover {
+        text-decoration: none;
+        color: #f6a20b;
+    }
+
+    /*-------- Lista Buque --------*/
+
+    .buque-produto-0{
+        background-image: url("../img/buque_chocolate/romantico.jpeg");
+    }
+
+    .buque-produto-1{
+        background-image: url("../img/buque_chocolate/azul.jpeg");
+    }
+
+    .buque-produto-2{
+        background-image: url("../img/buque_chocolate/romantico2.jpeg");
+    }
+
+    .buque-produto-3{
+        background-image: url("../img/buque_chocolate/dia_mae.jpeg");
+    }
+    
+
+    /*-------- Comentario --------*/
+    .conteudo-comentario{
+        padding: 30px;
+        background: #f6a20b;
+    }
+
+    .conteudo-comentario h3 {
+        text-align: center;
+        padding: 30px 0 80px 0;
+        color:#fff;
+        font-size: 1.5em;
+    }
+
+    .comentario{
+        padding: 30px;
+        font-size: 15px;
+        font-style: italic;
+        background: #fff;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+
+        margin-bottom:25px;
+    }
+    
+    .comentario i {
+        font-style: normal;
+    }
+    
+    .comentario strong{
+        font-style: normal;
+        font-size: 15px;
+    }
+    
+    .img-comentario{
+        padding-left: 10px;
+        font-size: 25px;
+        color:#fff;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+
+    /*-------- Contato --------*/
+    .contato{
+        padding: 40px 20px;
+        /*padding-left:10%;*/
+        background: #c31181;
+        color:#fff;
+        font-size:15px;
+    }
+    
+    .contato-descricao h3 {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    
+    .contato-mensagem h3 {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    
+    .contato-descricao ul{
+        padding-top:40px;
+        list-style: none;
+    }
+    
+    .contato-descricao li{
+        padding-bottom:2em;
+        list-style: none;
+    }
+    
+    .contato-descricao i{
+        padding-right: 1em;
+    }
+    
+    .btn-enviar {
+        padding: 8px 20px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .btn-enviar:hover{
+        text-decoration: none;
+        color:#f6a20b;
+    }
+
+    .contato textarea{
+        margin-bottom:25px;
+    }
+
+    /* Rodapé */
+    .footer{
+        text-align: left;
+        padding: 30px 20px;
+        background: #FFF;
+        color:#c31181;
+        font-size: 15px;
+    }
+
+    .footer h5 {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .footer a {
+        color:#c31181;
+    }
+
+    .footer a:hover{
+        color: #f6a20b;
+    }
+
+    .footer ul{
+        padding:0;
+    }
+
+    .footer ul li {
+        list-style: none;
+        font-size: 0.8em;
+    }
+
+    .institucional ul li{
+        padding:5px;
+    }
+
+    .ajuda ul li{
+        padding:5px;
+    }
+
+    .social ul li {
+        display: inline;
+        padding: 5px;
+    }
+
+    .social i{
+        color:#c31181;
+        font-size: 20px;
+    }
+
+    .pagamento{
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .pagamento ul li{
+        display: inline;
+        font-size: 20px;
+    }
+
+    .cartao{
+        padding-bottom: 20px;
+    }
+
+    .copy p{
+        font-size: 0.7em;
+    }
+    
+    /*------ link WhatsApp altera dependendo do tamanho da tela ------*/
+    .wp-web{
+        display: none;
+    }
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 1199px) {
+    
+    /*-------- Menu Social Vertical --------*/
+    .link-up-whats{
+        display: none !important; 
+    }
+    .link-up-face{
+        display: none !important;
+    }
+    .link-up-insta{
+        display: none !important;
+    }
+
+
+    /*-------- Menu Mobile --------*/
+    .menu{
+        width: 100%;
+        background-color: #c31181 !important;        
+    }
+
+    .menu-mobile{
+        text-align: center;
+    }
+
+    .menu-mobile ul {
+        padding-top: 30px !important;
+    }
+
+    .btn-mobile{
+        display: none;
+    }
+
+    .menu ul li{
+        list-style: none;
+        padding:20px;
+        background-color:#c31181;
+    }
+
+    .menu ul li:hover{
+        background: #f6a20b;  
+    }
+
+    .menu ul li a{
+        color:#fff;
+    }
+
+    .menu ul li a:hover{
+        text-decoration: none;
+    }
+
+    .menu-social{
+        padding-right: 30px;
+    }
+
+    .menu-social i{
+        color:#fff;
+        font-size:1.5em;
+    }
+
+    .menu-social li {
+        list-style: none;
+        float: left;
+    }
+
+    .menu-social li{
+        padding: 10px 15px !important;
+        color:#000;
+    }
+
+    .none-mobile {
+        display: none;
+    }
+
+    /*-------- Logo --------*/
+    .logo{
+        padding-top:100px;
+        padding-bottom:40px;
+        text-align: center;
+    }
+    .logo img {
+        width: 70px !important;
+        height: 80px !important;
+    }
+
+    .logo h3{
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 1.5em;
+        color: #c31181;
+        padding-top:10px;
+    }
+
+    .logo p{
+        font-size:10px;
+        color:dimgrey;
+        padding-bottom: 1%;
+    }
+
+    /*-------- Menu Desktop --------*/
+
+    .menu-desktop-align{
+        text-align: center;
+    }
+
+    .menu-desktop{
+        padding-bottom:5px;
+    }
+
+    .menu-desktop li{
+        display: inline;
+        padding:30px;
+        font-weight: 600;
+    }
+
+    .menu-desktop li a {
+        color:#f6a20b;
+        font-family: 'roboto';
+    }
+
+    .dropdown-desktop{
+        background-color: #f6a20b;;
+    }
+
+    .dropdown-desktop a{
+        color: #fff !important;
+    }
+
+    .dropdown-desktop a:hover{
+        background-color: #c31181;
+    }
+
+    /*-------- Slide --------*/
+    .slide-box{
+        height: 300px;
+        border:6px solid #f6a20b;
+    }
+
+    
+    .box1{
+        background-image: url("../img/slide/cap.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box2{
+        background-image: url("../img/slide/panda.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box3{
+        background-image: url("../img/slide/bud.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .indicador{
+        padding:10px;
+    }
+
+    .none-slide-desktop{
+        display: none;
+    }
+
+    /*-------- Sobre Festa na Caixa --------*/
+    .conteudo-sobre{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color:#f6a20b;
+        padding:60px 30px;
+        text-align: center;
+        color:#fff
+    }
+
+    .conteudo-sobre img{
+        width: 80% !important;
+        height: 350px !important;
+        border: 5px solid #fff;
+    }
+
+    .conteudo-sobre h3{
+        padding-top: 0px;
+        font-weight: bolder;
+        font-size: 1.5em;
+        
+        padding-bottom:30px;
+    }
+
+    .conteudo-sobre p{
+        text-align: left;
+    }
+
+    .conteudo-sobre a {
+        margin: 60px;
+        padding: 8px 10px;
+        background: #fff;
+        color: #f6a20b;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .conteudo-sobre a:hover {
+        text-decoration: none;
+        color: #c31181;
+    }
+
+
+    /*-------- Lista de Produtos Caixa --------*/    
+    .lista-produto{
+        text-align: center;
+        margin: 10px 0px;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    }
+
+    .lista-produto img{
+        width: 100%;
+        height: 200px;
+        position: center;
+    }
+
+    .produto{
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px;
+    }
+
+    .caixa-produto-0{
+        background-image: url("../img/festa_caixa/sp.jpeg");
+    }
+
+    .caixa-produto-1{
+        background-image: url("../img/festa_caixa/cap.jpg");
+    }
+
+    .caixa-produto-2{
+        background-image: url("../img/festa_caixa/lol.jpg");
+    }
+
+    .caixa-produto-3{
+        background-image: url("../img/festa_caixa/urso.jpeg");
+    }
+
+    .descricao-produto{
+        text-align: left;
+        padding:20px;   
+    }
+
+    .descricao-produto h3{
+        font-weight: 600;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .descricao-produto p {
+        padding-bottom: 40px;
+    }
+
+    .descricao-produto a{
+        padding: 8px 10px;
+        background: #f6a20b;
+        color: #fff;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    /*-------- Sobre Cesta --------*/
+    .cesta{
+        background: #c31181 !important;
+        padding: 30px 0px !important;
+    }
+    
+    .cesta img{
+        width: 75% !important;
+        height: 300px !important;
+        border-radius:50%;
+    }
+
+    .cesta h3{
+        padding-bottom: 10px;
+    }
+
+    .cesta p{
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .cesta a{
+        color: #c31181 !important;
+    }
+
+    .cesta a:hover{
+        color:#f6a20b !important;
+    }    
+
+    /*-------- Lista Cesta --------*/
+
+    .cesta-produto-0{
+        background-image: url("../img/cesta/cafe_manha.jpeg");
+    }
+
+    .cesta-produto-1{
+        background-image: url("../img/cesta/panda.jpg");
+    }
+
+    .cesta-produto-2{
+        background-image: url("../img/cesta/cafe_manha2.jpeg");
+    }
+
+    .cesta-produto-3{
+        background-image: url("../img/cesta/mamae_bebe.jpg");
+    }
+
+    /*-------- Sobre Buque de cocholate --------*/
+
+    .sobre-buque{
+        text-align: center;
+        padding: 30px;
+        margin: 20px 0;
+        background-color:#c31181;
+        color:#fff;
+    }
+
+    .sobre-buque h3{
+        font-weight: 600;
+        font-size: 2em;
+        padding:30px 0 40px 0;
+    }
+
+    .sobre-buque img{
+        width: 50%;
+        height: 350px;
+        border: 5px solid #fff; 
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sobre-buque p {
+        padding-top: 30px;
+        text-align: left;
+    }
+
+    .sobre-buque a {
+        padding: 8px 10px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+        
+    }
+
+    .sobre-buque a:hover {
+        text-align: center;
+        text-decoration: none;
+        color: #f6a20b;
+    }
+
+    /*-------- Lista Buque --------*/
+
+    .buque-produto-0{
+        background-image: url("../img/buque_chocolate/romantico.jpeg");
+    }
+
+    .buque-produto-1{
+        background-image: url("../img/buque_chocolate/azul.jpeg");
+    }
+
+    .buque-produto-2{
+        background-image: url("../img/buque_chocolate/romantico2.jpeg");
+    }
+
+    .buque-produto-3{
+        background-image: url("../img/buque_chocolate/dia_mae.jpeg");
+    }
+    
+
+    /*-------- Vantagem --------*/
+    .vantagem{
+        text-align: center;
+        padding-top:40px;
+    }
+
+    .vantagem h3{
+        padding-bottom: 60px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    .vantagem i{
+        border-radius: 100%;
+        background: #c31181;
+        color: #fff;
+        padding:30px;
+        font-size:2em;
+    }
+
+    .vantagem p{
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+
+    /*-------- Comentario --------*/
+    .conteudo-comentario h3{
+        color:#fff;
+        font-size: 1.5em;
+    }
+
+    .conteudo-comentario{
+        padding: 30px;
+        background: #f6a20b;
+    }
+
+    .conteudo-comentario h3 {
+        text-align: center;
+        padding: 30px 0 80px 0;
+    }
+
+    .comentario{
+        padding: 30px;
+        font-size: 15px;
+        font-style: italic;
+        background: #fff;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+
+        margin-bottom:25px;
+    }
+
+    .comentario i {
+        font-style: normal;
+    }
+
+    .comentario strong{
+        font-style: normal;
+        font-size: 15px;
+    }
+
+    .img-comentario{
+        padding-left: 10px;
+        font-size: 25px;
+        color:#fff;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+
+    /*-------- Contato --------*/
+    .contato{
+        padding:10%;
+        /*padding-left:10%;*/
+        background: #c31181;
+        color:#fff;
+        font-size:15px;
+    }
+
+    .contato-descricao h3 {
+        padding-bottom: 25%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+
+    .contato-mensagem h3 {
+        padding-bottom: 10%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+
+    .contato-descricao ul{
+        font-size: 1.1em;
+        padding:0px;
+        list-style: none;
+    }
+
+    .contato-descricao li{
+        padding-bottom:1.5em;
+        list-style: none;
+    }
+
+    .contato-descricao i{
+        padding-right: 1em;
+    }
+
+    .btn-enviar {
+        padding: 8px 20px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .btn-enviar:hover{
+        text-decoration: none;
+        color:#f6a20b;
+    }
+
+    .contato textarea{
+        margin-bottom:25px;
+    }
+
+    /* Rodapé */
+    .footer{
+        text-align: left;
+        padding: 30px 20px;
+        background: #FFF;
+        color:#c31181;
+        font-size: 15px;
+    }
+
+    .footer h5 {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .footer a {
+        color:#c31181;
+    }
+
+    .footer a:hover{
+        color: #f6a20b;
+    }
+
+    .footer ul{
+        padding:0;
+    }
+
+    .footer ul li {
+        list-style: none;
+        font-size: 0.8em;
+    }
+
+    .institucional ul li{
+        padding:5px;
+    }
+
+    .ajuda ul li{
+        padding:5px;
+    }
+
+    .social ul li {
+        display: inline;
+        padding: 5px;
+    }
+
+    .social i{
+        color:#c31181;
+        font-size: 20px;
+    }
+
+    .pagamento{
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .pagamento ul li{
+        display: inline;
+        font-size: 20px;
+    }
+
+    .cartao{
+        padding-bottom: 20px;
+    }
+
+    .copy p{
+        font-size: 0.7em;
+    }    
+
+    /*------ link WhatsApp altera dependendo do tamanho da tela ------*/
+    .wp-mobile{
+        display: none;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    /*-------- Menu Mobile --------*/
+    .menu{
+        width: 100%;
+        background-color: #c31181 !important;        
+    }
+
+    .menu-mobile{
+        text-align: center;
+    }
+
+    .menu-mobile ul {
+        padding-top: 30px !important;
+    }
+
+    .btn-mobile{
+        display: none;
+    }
+
+    .menu ul li{
+        list-style: none;
+        padding:20px;
+        background-color:#c31181;
+    }
+
+    .menu ul li:hover{
+        background: #f6a20b;  
+    }
+
+    .menu ul li a{
+        color:#fff;
+    }
+
+    .menu ul li a:hover{
+        text-decoration: none;
+    }
+
+    .menu-social{
+        padding-right: 8%;
+    }
+
+    .menu-social i{
+        color:#fff;
+        font-size:1.5em;
+    }
+
+    .menu-social li {
+        list-style: none;
+        float: left;
+    }
+
+    .menu-social li{
+        padding: 10px 15px !important;
+        color:#000;
+    }
+
+    .none-mobile {
+        display: none;
+    }
+
+    /*-------- Logo --------*/
+    .logo{
+        padding-top:50px;
+        padding-bottom:30px;
+        text-align: center;
+    }
+    .logo img {
+        width: 70px !important;
+        height: 80px !important;
+    }
+
+    .logo h3{
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 1.5em;
+        color: #c31181;
+        padding-top:10px;
+    }
+
+    .logo p{
+        font-size:10px;
+        color:dimgrey;
+        padding-bottom: 1%;
+    }
+
+    /*-------- Menu Desktop --------*/
+
+    .menu-desktop-align{
+        text-align: center;
+    }
+    
+    .menu-desktop{
+        padding-bottom:5px;
+    }
+
+    .menu-desktop li{
+        display: inline;
+        padding:30px;
+        font-weight: 600;
+    }
+
+    .menu-desktop li a {
+        color:#f6a20b;
+        font-family: 'roboto';
+    }
+
+    .dropdown-desktop{
+        background-color: #f6a20b;;
+    }
+
+    .dropdown-desktop a{
+        color: #fff !important;
+    }
+
+    .dropdown-desktop a:hover{
+        background-color: #c31181;
+    }
+
+    /*-------- Slide --------*/
+    .slide-box{
+        height: 300px;
+        border:6px solid #f6a20b;
+    }
+
+    .box1{
+        background-image: url("../img/slide/cap.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box2{
+        background-image: url("../img/slide/panda.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box3{
+        background-image: url("../img/slide/bud.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .indicador{
+        padding:10px;
+    }
+
+    .none-slide{
+        display: none;
+    }
+
+    /*-------- Sobre Festa na Caixa --------*/
+    .conteudo-sobre{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color:#f6a20b;
+        padding:60px 30px;
+        text-align: center;
+        color:#fff
+    }
+
+    .conteudo-sobre img{
+        width: 60% !important;
+        height: 100% !important;
+        border: 5px solid #fff;
+    }
+
+    .conteudo-sobre h3{
+        padding-top: 30px;
+        font-weight: bolder;
+        font-size: 1.5em;
+        padding-bottom:30px;
+    }
+
+    .conteudo-sobre p{
+        padding-bottom: 20px;
+        text-align: left;
+    }
+
+    .conteudo-sobre a {
+        margin: 60px;
+        padding: 8px 10px;
+        background: #fff;
+        color: #f6a20b;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .conteudo-sobre a:hover {
+        text-decoration: none;
+        color: #c31181;
+    }
+
+
+    /*-------- Lista de Produtos (Cesta e Caixa) --------*/    
+    .lista-produto{
+        text-align: center;
+        margin: 10px 0px;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    }
+
+    .lista-produto img{
+        width: 100%;
+        height: 200px;
+        position: center;
+    }
+
+    .produto{
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px;
+    }
+
+    .caixa-produto-0{
+        background-image: url("../img/festa_caixa/sp.jpeg");
+    }
+
+    .caixa-produto-1{
+        background-image: url("../img/festa_caixa/cap.jpg");
+    }
+
+    .caixa-produto-2{
+        background-image: url("../img/festa_caixa/lol.jpg");
+    }
+
+    .caixa-produto-3{
+        background-image: url("../img/festa_caixa/urso.jpeg");
+    }
+
+    .descricao-produto{
+        text-align: left;
+        padding:20px;   
+    }
+
+    .descricao-produto h3{
+        font-weight: 600;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .descricao-produto p {
+        padding-bottom: 40px;
+    }
+
+    .descricao-produto a{
+        padding: 8px 10px;
+        background: #f6a20b;
+        color: #fff;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    /*-------- Sobre Cesta --------*/
+    .cesta{
+        background: #c31181 !important;
+        padding: 60px 30px!important;
+    }
+
+    .cesta h3{
+        padding-top:0px;
+    }
+    
+    .cesta img{
+        width: 60% !important;
+        height: 300px !important;
+        border-radius:50%;
+    }
+
+    .cesta a{
+        color: #c31181 !important;
+    }
+
+    .cesta a:hover{
+        color:#f6a20b !important;
+    }
+
+    /*-------- Lista Cesta --------*/
+
+    .cesta-produto-0{
+        background-image: url("../img/cesta/cafe_manha.jpeg");
+    }
+
+    .cesta-produto-1{
+        background-image: url("../img/cesta/panda.jpg");
+    }
+
+    .cesta-produto-2{
+        background-image: url("../img/cesta/cafe_manha2.jpeg");
+    }
+
+    .cesta-produto-3{
+        background-image: url("../img/cesta/mamae_bebe.jpg");
+    }
+    
+    /*-------- Sobre Buque de cocholate --------*/
+
+    .sobre-buque{
+        text-align: center;
+        padding: 30px 5%;
+        margin: 20px 0;
+        background-color:#c31181;
+        color:#fff;
+    }
+
+    .sobre-buque h3{
+        font-weight: 600;
+        font-size: 2em;
+        padding:30px 0 40px 0;
+    }
+
+    .sobre-buque img{
+        width: 40%;
+        height: 350px;
+        border: 5px solid #fff; 
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sobre-buque p {
+        padding-top: 30px;
+        text-align: left;
+    }
+
+    .sobre-buque a {
+        padding: 8px 10px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+        
+    }
+
+    .sobre-buque a:hover {
+        text-align: center;
+        text-decoration: none;
+        color: #f6a20b;
+    }   
+
+    /*-------- Lista Buque --------*/
+
+    .buque-produto-0{
+        background-image: url("../img/buque_chocolate/romantico.jpeg");
+    }
+
+    .buque-produto-1{
+        background-image: url("../img/buque_chocolate/azul.jpeg");
+    }
+
+    .buque-produto-2{
+        background-image: url("../img/buque_chocolate/romantico2.jpeg");
+    }
+
+    .buque-produto-3{
+        background-image: url("../img/buque_chocolate/dia_mae.jpeg");
+    }
+
+    
+    /*-------- Vantagem --------*/
+    .vantagem{
+        text-align: center;
+        padding-top:40px;
+    }
+
+    .vantagem h3{
+        padding-bottom: 60px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    .vantagem i{
+        border-radius: 100%;
+        background: #c31181;
+        color: #fff;
+        padding:30px;
+        font-size:2em;
+    }
+
+    .vantagem p{
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+
+    /*-------- Comentario --------*/
+    .conteudo-comentario h3{
+        color:#fff;
+        font-size: 2em;
+    }
+
+    .conteudo-comentario{
+        padding: 30px;
+        background: #f6a20b;
+    }
+
+    .conteudo-comentario h3 {
+        text-align: center;
+        padding: 30px 0 80px 0;
+    }
+
+    .comentario{
+        padding: 30px;
+        font-size: 15px;
+        font-style: italic;
+        background: #fff;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+            box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+
+        margin-bottom:25px;
+    }
+
+    .comentario i {
+        font-style: normal;
+    }
+
+    .comentario strong{
+        font-style: normal;
+        font-size: 15px;
+    }
+
+    .img-comentario{
+        padding-left: 10px;
+        font-size: 30px;
+        color:#fff;
+    }
+
+    strong{
+        font-weight: 600;
+    }
+
+
+    /*-------- Contato --------*/
+    .contato{
+        padding:5% 15%;
+        /*padding-left:10%;*/
+        background: #c31181;
+        color:#fff;
+        
+    }
+
+    .contato-descricao h3 {
+        padding-bottom: 20%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+
+    .contato-mensagem h3 {
+        padding-bottom: 10%;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+
+    .contato-descricao ul{
+        font-size: 1.1em;
+        padding:0px;
+        list-style: none;
+    }
+
+    .contato-descricao li{
+        padding-bottom:1.5em;
+        list-style: none;
+    }
+
+    .contato-descricao i{
+        padding-right: 1em;
+    }
+
+    .btn-enviar {
+        padding: 8px 20px;
+        background: #fff;
+        color: #c31181;
+        border-radius:5px;
+        font-size: 1em;
+    }
+
+    .btn-enviar:hover{
+        text-decoration: none;
+        color:#f6a20b;
+    }
+
+    .contato textarea{
+        margin-bottom:25px;
+    }
+
+    /* Rodapé */
+    .footer{
+        text-align: center;
+        padding: 30px 20px;
+        background: #FFF;
+        color:#c31181;
+        font-size: 15px;
+    }
+
+    .footer h5 {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .footer a {
+        color:#c31181;
+    }
+
+    .footer a:hover{
+        color: #f6a20b;
+    }
+
+    .footer ul{
+        padding:0;
+    }
+
+    .footer ul li {
+        list-style: none;
+        font-size: 0.8em;
+    }
+
+    .institucional ul li{
+        padding:5px;
+    }
+
+    .ajuda ul li{
+        padding:5px;
+    }
+
+    .social ul li {
+        display: inline;
+        padding: 5px;
+    }
+
+    .social i{
+        color:#c31181;
+        font-size: 20px;
+    }
+
+    .pagamento{
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .pagamento ul li{
+        display: inline;
+        font-size: 20px;
+    }
+
+    .cartao{
+        padding-bottom: 20px;
+    }
+
+    .copy p{
+        font-size: 0.7em;
+    }    
+
+    /*------ link WhatsApp altera dependendo do tamanho da tela ------*/
+    .wp-mobile{
+        display: none;
+    }
+
+    .link-up i:hover{
+        color:black !important;
+    }
+}
