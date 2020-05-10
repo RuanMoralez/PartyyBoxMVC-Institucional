@@ -35,8 +35,8 @@
               <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/perfil/carina_perfil.jpg"?>">
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">HTML</a></li>
-                <li><a class="dropdown-item" href="#">CSS</a></li>
+                <li><a class="dropdown-item" href="#">Link1</a></li>
+                <li><a class="dropdown-item" href="#">Link2</a></li>
                 <div class="dropdown-divider"></div>
                 <li><a class="dropdown-item" href='<?php echo URL_BASE."admin/doLogout/". md5(session_id()) ?>'>Sair</a></li>
               </ul>
