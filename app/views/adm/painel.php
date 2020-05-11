@@ -35,8 +35,8 @@
               <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/perfil/carina_perfil.jpg"?>">
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Link1</a></li>
-                <li><a class="dropdown-item" href="#">Link2</a></li>
+                <li><a class="dropdown-item" href="#">Editar</a></li>
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
                 <div class="dropdown-divider"></div>
                 <li><a class="dropdown-item" href='<?php echo URL_BASE."admin/doLogout/". md5(session_id()) ?>'>Sair</a></li>
               </ul>
@@ -44,6 +44,30 @@
           </div>  
         </div>
       </div>
+      
+      <!--
+      ***Painel****
+      -->
+
+      <div class="row">
+        <div class="col-md-3 nopadding">
+          <div class="painel">
+            <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/logo/partyybox_logo.jpeg"?>" alt="">
+            <h1>Administrador</h1>
+            <ul>
+              <a href="#"><li><i class="fas fa-edit"></i>Slide</li></a>
+              <a href="#"><li><i class="fas fa-edit"></i>Caixa</li></a>
+              <a href="#"><li><i class="fas fa-edit"></i>Cesta</li></a>
+              <a href="#"><li><i class="fas fa-edit"></i>Buque</li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+      
     </div>
 
     <!-- Optional JavaScript -->

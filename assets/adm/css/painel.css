@@ -62,7 +62,7 @@ table {
 /*---------- Nav---------- */
 
 
-img{
+.perfil img{
     width: 35px;
     height: 35px;
     margin-left: 10px;
@@ -120,11 +120,45 @@ img{
     color:#fff;
 }
 
-/**/
-.painel-esquerdo{
-    width: 100%;
-    background-color: chocolate;
+
+/*------------ Painel --------- */
+.painel{
+    background-color: #f6a20b;
+    width: 250px;
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    height: calc(100vh - 57px);
 }
-.nopadding-left{
-    padding-left:0;
+.painel img{
+    width:150px;
+    height:150px;
+}
+.painel h1{
+    padding-top: 20px;
+    font-weight: 600;
+}
+.painel ul{
+    padding-top: 30px;
+}
+.painel ul li{
+     padding:5px;
+     color: #fff;
+}
+.nopadding{
+    padding-left: 0!important;
+}
+/*------------ Painel Feature  --------- */
+
+.painel i {
+    margin-right:6px;
+    color: #c31181;
+    font-size: 20px;
+    background: #FFF;
+    padding:10px;
+    border-radius: 50px;
+}
+
+.painel ul li {
+    padding:15px;
 }
