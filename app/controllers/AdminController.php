@@ -12,6 +12,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\models\Usuario;
+use app\models\Produto;
 
 /**
  * Description of AdminController
@@ -28,8 +29,11 @@ class AdminController extends Controller{
         }
     }
     
-    public function index(){
-        $this->load('adm/painel');
+    public function index($c = 1){
+        $produto = new Produto();
+        $caixa = $produto->listarProduto($c);
+        
+        $this->load('adm/painel',$caixa);
     }
     
     public function doLogout($token){
@@ -39,5 +43,5 @@ class AdminController extends Controller{
             header('location: /partyyboxMVC/login');
         }
     }
-    
+       
 }

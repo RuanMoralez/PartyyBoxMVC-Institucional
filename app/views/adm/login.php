@@ -45,7 +45,9 @@
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
 				 	    		<input type="submit" value="Login" class="btn login_btn">
+								<?php echo $aviso ?>
 				   			</div>
+							   
 					</form>
 				</div>
 		
@@ -57,5 +59,8 @@
 			</div>
 		</div>
 	</div>
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript"></script>
 </body>
 </html>

@@ -42,10 +42,21 @@ class LoginController extends Controller{
                 
             }else{
                 unset($_POST);
-                $data['aviso'] = 'Dados inválios ou não existe';
+                $data['aviso'] = '
+                    <script>
+                        $(document).ready( function(){
+
+                        swal({
+                                title: "Oops!",
+                                text: "Usuario ou senha incorretos...",
+                                icon: "warning"
+                            })
+                
+                        });
+                    </script>    
+                ';
             }
         }
-        
         $this->load('adm/login',$data);
     }
 }
