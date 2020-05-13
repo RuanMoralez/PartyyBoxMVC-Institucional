@@ -68,7 +68,11 @@
           <div class="row">
           
             <?php 
+                $id = 0;
+                
                 foreach ($caixa as $c){
+
+                  
                     echo ' 
                         <div class="col-md-3 nopadding">
                             <div class="produto">
@@ -76,16 +80,21 @@
                             </div>
                             
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary edit-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-danger edit-btn" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
                               Editar
                             </button>
-
+                          
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <form>
+                            <div class="modal fade" id="exampleModalCenter'.$id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">'.$c['titulo'].'</h5>
+                                    <div class="form-group">
+                                      <label for="exampleFormControlTextarea1">Título</label>
+                                      <input class="form-control" type="text" placeholder="'.$c['titulo'].'">
+                                    </div>
+                                    <!--<h5 class="modal-title" id="exampleModalLongTitle">'.$c['titulo'].'</h5>-->
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
@@ -93,6 +102,10 @@
                                   <div class="modal-body">
                                     <div class="modal-edit">
                                       <img src="'.URL_BASE.'assets/'.$c['endereco'].'">
+                                      <div class="form-group">
+                                      <label for="exampleFormControlTextarea1">Descrição</label>
+                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="'.$c['descricao'].'"></textarea>
+                                    </div>
                                     </div>
                                   </div>
                                   <div class="modal-footer">
@@ -102,8 +115,11 @@
                                 </div>
                               </div>
                             </div>
+                            </form>
                         </div>
                     ';
+
+                    $id = $id+1;
                 }
             ?>
             
@@ -111,9 +127,11 @@
         </div>
       </div>
     </div>
-                
+    
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

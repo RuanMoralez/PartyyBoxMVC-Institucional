@@ -172,11 +172,9 @@ table {
     color:#c31181;
     font-size: 1.5em;
 }
-
 .produto{
     padding-top:50px;
 }
-
 .produto img{
     width: 200px;
     height: 200px;
@@ -184,12 +182,11 @@ table {
 .edit-btn{
     margin-top:10px;
 }
-
 .modal-edit{
     text-align: center;
 }
-
 .modal-edit img{
     width: 300px;
     height: 300px;
+    padding-bottom: 20px;
 }
