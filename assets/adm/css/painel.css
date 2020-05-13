@@ -124,15 +124,15 @@ table {
 /*------------ Painel --------- */
 .painel{
     background-color: #f6a20b;
-    width: 250px;
+    width: 100%;
     text-align: center;
     padding-top: 30px;
     color: #fff;
     height: calc(100vh - 57px);
 }
 .painel img{
-    width:150px;
-    height:150px;
+    width:130px;
+    height:130px;
 }
 .painel h1{
     padding-top: 20px;
@@ -166,27 +166,49 @@ table {
 }
 
 /*upload*/
-
 .sessao{
-    padding-top:5%;
+    font-size: 2em  ;
+    padding: 3% 0;
     color:#c31181;
-    font-size: 1.5em;
+}
+.lista-produto{
+    text-align: center;
+    margin: 10px 0px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+        box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
 }
 .produto{
-    padding-top:50px;
-}
-.produto img{
-    width: 200px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 200px;
 }
-.edit-btn{
-    margin-top:10px;
+.descricao-produto{
+    text-align: left;
+    padding:10px;   
 }
-.modal-edit{
-    text-align: center;
+.descricao-produto h3{
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.descricao-produto p {
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+.descricao-produto button{
+    padding: 8px 20px;
+    background: #f6a20b;
+    color: #fff;
+    border-radius:5px;
+    font-size: 1em;
 }
 .modal-edit img{
     width: 300px;
     height: 300px;
     padding-bottom: 20px;
 }
+
+

@@ -18,7 +18,6 @@
     <h1>Painel Administrativo</h1>
     
     -->
-    
     <div class="container-fluid">
       <div class="row menu">
         <div class="col-md-9"></div>
@@ -51,7 +50,7 @@
       -->
 
       <div class="row">
-        <div class="col-md-3 nopadding">
+        <div class="col-md-2 nopadding">
           <div class="painel">
             <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/logo/partyybox_logo.jpeg"?>" alt="">
             <h1>Administrador</h1>
@@ -63,8 +62,8 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-9">
-          <div class="sessao"><strong>Caixa - Edit Imagem</strong></div>
+        <div class="col-md-10">
+          <div class="sessao"><strong>Edit - Festa na Caixa</strong></div>
           <div class="row">
           
             <?php 
@@ -75,17 +74,22 @@
                   
                     echo ' 
                         <div class="col-md-3 nopadding">
-                            <div class="produto">
-                                <img src="'.URL_BASE.'assets/'.$c['endereco'].'">
-                            </div>
+                          <div class="lista-produto">
+                            <div style="background:url('.URL_BASE.'/assets/'.$c['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                            <div class="descricao-produto">
                             
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger edit-btn" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
-                              Editar
-                            </button>
-                          
-                            <!-- Modal -->
-                            <form>
+                              <h3>'.$c['titulo'].'</h3>
+                              <p>'.$c['descricao'].'</p>
+
+                              <!-- Button trigger modal -->
+                              <button type="button" class="btn btn-danger edit-btn" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
+                                Editar
+                              </button>
+                            </div>
+                          </div>
+                            
+                          <!-- Modal -->
+                          <form >
                             <div class="modal fade" id="exampleModalCenter'.$id.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -101,7 +105,13 @@
                                   </div>
                                   <div class="modal-body">
                                     <div class="modal-edit">
-                                      <img src="'.URL_BASE.'assets/'.$c['endereco'].'">
+                                    
+                                      <img class="blah" src="'.URL_BASE.'assets/'.$c['endereco'].'">
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="customFile" class="imgInp">
+                                          <label class="custom-file-label" for="customFile">Trocar Imagem</label>
+                                        </div>
+                                    
                                       <div class="form-group">
                                       <label for="exampleFormControlTextarea1">Descrição</label>
                                       <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="'.$c['descricao'].'"></textarea>
@@ -115,7 +125,7 @@
                                 </div>
                               </div>
                             </div>
-                            </form>
+                          </form>
                         </div>
                     ';
 
@@ -127,11 +137,14 @@
         </div>
       </div>
     </div>
-    
-    
+
+   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
+    <script>
+      
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
