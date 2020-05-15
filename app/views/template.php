@@ -250,7 +250,7 @@
                 echo '
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.'/assets/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                        <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                         <div class="descricao-produto">
                             
                             <h3>'.$pCaixa['titulo'].'</h3>

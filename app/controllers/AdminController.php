@@ -29,12 +29,71 @@ class AdminController extends Controller{
         }
     }
     
-    public function index($c = 1){
+    public function index($c = 0){
         $produto = new Produto();
-        $caixa = $produto->listarProduto($c);
+        $caixa = $produto->listarProduto(1);
         
         $this->load('adm/painel',$caixa);
+         
     }
+    
+    public function adicionarProduto(){
+        
+    }
+    
+    public function atualizarProduto(){
+        $imagem = "";
+        
+        if($_POST){
+            $img = array_filter($_FILES['img']);
+            
+            if(!isset($img['error'])){
+                $error = array();
+                
+                if(!\preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $img["type"])){
+                    $error[1] = "Isso não é uma imagem.";
+                } 
+                
+                if(count($error)==0){
+                    
+                    preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
+                    
+                    $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                
+                    $caminho_imagem =  "assets/img/festa_caixa/". $nome_imagem;
+                
+                    move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                
+                    $imagem = $caminho_imagem;
+                }
+            }else{
+                $imagem = $_POST['default'];
+            }
+        
+        /*
+        echo "<pre>";
+        var_dump($_POST['default']);
+        */
+        
+            $titulo = $_POST['titulo'];
+            $descricao = $_POST['descricao'];
+            $id = $_POST['id'];
+        
+        
+        
+            $produto = new Produto();
+            $produto->atualizar($id, $titulo, $descricao, $imagem);
+        
+            header("location: /partyyboxMVC/admin");
+        }
+        
+        $this->index();
+    }
+    
+    
+    
+    
+    
     
     public function doLogout($token){
         $token_session = md5(session_id());
@@ -43,5 +102,7 @@ class AdminController extends Controller{
             header('location: /partyyboxMVC/login');
         }
     }
+    
+    
        
 }

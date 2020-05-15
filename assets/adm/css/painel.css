@@ -128,7 +128,7 @@ table {
     text-align: center;
     padding-top: 30px;
     color: #fff;
-    height: calc(100vh - 57px);
+    height: 100%;   
 }
 .painel img{
     width:130px;
@@ -165,12 +165,58 @@ table {
     padding:15px;
 }
 
-/*upload*/
+/* Container Edit sobre caixa */
+
 .sessao{
-    font-size: 2em  ;
-    padding: 3% 0;
+    font-size: 20px;
+    padding-left:10px;
+    padding-top:30px;
+    padding-bottom:10px;
     color:#c31181;
 }
+
+.edit-sobre-caixa {
+    padding: 40px 0;
+    background: #c31181;
+    color:#fff;
+    margin-bottom: 10px;
+}
+.edit-sobre-caixa img{
+    width: 350px;
+    height: 400px;
+    border: 5px solid #fff;
+}
+.edit-sobre-caixa-img{
+    padding-right: 50px;
+    text-align: right;
+}
+.edit-sobre-caixa-text{
+    padding:30px;
+}
+.modal-saiba-mais{
+    background: #FFF;
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: #c31181;
+}
+.modal-saiba-mais:hover{
+    color: #f6a20b;
+}
+
+/* Inserir novo produto*/
+
+
+.edit-input input{
+    width:100%;
+    height: 200px;
+}
+
+.custom-file-label{
+
+}
+/*Edit Lista Produto*/
+
+
 .lista-produto{
     text-align: center;
     margin: 10px 0px;
@@ -205,10 +251,45 @@ table {
     border-radius:5px;
     font-size: 1em;
 }
+.modal-edit{
+    text-align: center;
+}
 .modal-edit img{
     width: 300px;
     height: 300px;
+    padding-top:20px;
     padding-bottom: 20px;
 }
+.edit-descricao{
+    text-align: left;
+}
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Upload";
+}
+.btn-add i {
+    font-size: 2em;
+    padding-top: 5px;
+    color:green;
 
+}
+
+.edit-ipt:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.edit-ipt:lang(en)~.custom-file-label::after {
+    content: "";
+    border: 0px;
+}
+
+.edit-label{
+    border:0px;
+}
+
+.edit-label::after{
+    background:none;
+    border:0px;
+}
 
