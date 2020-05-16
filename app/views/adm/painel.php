@@ -86,11 +86,11 @@
           <div class="row">
             <div class="col-md-3 inserir-produto">
 
-            <form enctype="multipart/form-data" action="<?php echo URL_BASE."admin/adicionarProduto" ?>" method="POST">
+            <form enctype="multipart/form-data" action="" method="POST" class="adicionarProduto">
               <div class="lista-produto">
                 <div style="height: 200px;">
                   <div class="custom-file edit-input">
-                    <input type="file" class="custom-file-input edit-ipt" onchange="readInsertUrl(this);" name="img">
+                    <input type="file" class="custom-file-input edit-ipt" onchange="readInsertUrl(this);" name="img" class="file">
                     <label class="custom-file-label edit-label shadow-none" style="padding:0px">
                       <img id="blah" style="width:100%; height:200px;" src="<?php echo URL_BASE."assets/adm/img/essenciais/no_imagem_available.png"?>">
                       <p>Upload de imagem</p>
@@ -106,6 +106,8 @@
                   
                   <!-- Button trigger modal -->
                   <input type="submit" class="btn btn-success" value="Adicionar">
+                  <div class="loading" style="float:right; margin-right: 40%; display:none;"><img src="<?php echo URL_BASE."assets/img/gif/loading.gif"?>" width="40"></div>
+                  <div class="mostrar"></div>
                 </div>
               </form>  
               </div>
@@ -132,7 +134,7 @@
                               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
                                 Editar
                               </button>
-                              <a href="'.URL_BASE.'admin/removerProduto/'.$c['id'].'" class="btn btn-danger">Remover</a>
+                              <a href="javascript:void(0);" onclick="remover('.$c['id'].');" class="btn btn-danger removerProduto">Remover</a>
                             </div>
                           </div>
                           
@@ -189,8 +191,48 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
-    <script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript"></script>
+    <script>  
+
+      //Ajax formulário adicionar Produto
+      $(function(){
+        $('.adicionarProduto').submit(function(e){
+            e.preventDefault();
+          
+            $.ajax({
+            url: 'http://localhost/partyyboxMVC/admin/adicionarProduto',
+            type: 'POST',
+            data:  new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend:function(){
+                $('.loading').show();
+            },
+            success: function(data){  
+                $('.mostrar').html(data);
+                $('.loading').hide();
+                $('.form')[0].reset();
+            }
+        });
+        return false;
+        });
+      });
+
+      //Ajax atuliar ou remover produto
+      function remover(id){
+        
+          $.ajax({
+            url: 'http://localhost/partyyboxMVC/admin/removerProduto',
+            type: 'POST',
+            data: {id: id},
+            success: function(doc){
+              location.reload();
+            }
+          });
+        
+      }
 
       function readURL(input,indice) {
       
@@ -205,21 +247,25 @@
           }
       } 
 
-    function readInsertUrl(input) {
+      function readInsertUrl(input) {
+        
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+        
+            reader.onload = function (e) {
+              $('#blah').attr('src', e.target.result);
+            };
+          
+            reader.readAsDataURL(input.files[0]);
+          }
+      } 
+
+
+        //Formulário envio de emaio com alerta de sucesso ou erro
       
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-          reader.onload = function (e) {
-            $('#blah').attr('src', e.target.result);
-          };
-
-          reader.readAsDataURL(input.files[0]);
-        }
-    } 
-    
     </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>

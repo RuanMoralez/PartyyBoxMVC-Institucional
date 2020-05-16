@@ -38,11 +38,12 @@ class AdminController extends Controller{
     }
     
     public function adicionarProduto(){
+         $data=array();
+         
         if($_POST){
             
-            $img = array_filter($_FILES['img']);
-            
-            if( !empty($_POST['titulo']) || !empty($_POST['descicao']) || !empty($_FILES['img'])){
+            if( !empty($_FILES['img']['name']) && !empty($_POST['titulo']) && !empty($_POST['descricao'])){
+                $img = array_filter($_FILES['img']);
                 
                 if(!isset($img['error'])){
                     $error = array();
@@ -69,17 +70,34 @@ class AdminController extends Controller{
                         $produto = new Produto();
                         $produto->inserir($titulo, $descricao, $imagem);
                         
-                        header("location: /partyyboxMVC/admin");
+                        echo '
+                            <script>
+                                location.reload();
+                            </script>
+                        ';
                     } 
                 }
+            }else{
+                echo '
+                        <script>
+                            $(document).ready( function(){
+
+                                swal({
+                                    title: "Oops!",
+                                    text: "Preencha todos os campos...",
+                                    icon: "warning"
+                                })
+                            });
+                        </script>
+                    ';
             }
-           
         }
-        
-        $this->index();
     }
     
-    public function removerProduto($id){
+    public function removerProduto(){
+        
+        $id = $_POST['id'];
+        
         $data = array(
             'aviso'=>''
         );
@@ -105,7 +123,8 @@ class AdminController extends Controller{
             ';
         }
         
-        $this->index($data);
+        //$this->index($data);
+                 
     }
     
     public function atualizarProduto(){
