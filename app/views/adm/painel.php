@@ -86,12 +86,15 @@
           <div class="row">
             <div class="col-md-3 inserir-produto">
 
-            <form action="<?php echo URL_BASE."admin/adicionarProduto" ?>" method="POST">
+            <form enctype="multipart/form-data" action="<?php echo URL_BASE."admin/adicionarProduto" ?>" method="POST">
               <div class="lista-produto">
                 <div style="height: 200px;">
                   <div class="custom-file edit-input">
                     <input type="file" class="custom-file-input edit-ipt" onchange="readInsertUrl(this);" name="img">
-                    <label class="custom-file-label edit-label shadow-none"><img id="blah" style="width:100%; height: 150px; padding-top:40px;" src="<?php echo URL_BASE."assets/adm/img/essenciais/no_imagem_available.png"?>">Trocar Imagem</label>
+                    <label class="custom-file-label edit-label shadow-none" style="padding:0px">
+                      <img id="blah" style="width:100%; height:200px;" src="<?php echo URL_BASE."assets/adm/img/essenciais/no_imagem_available.png"?>">
+                      <p>Upload de imagem</p>
+                    </label>
                   </div>
                 </div>
                 <div class="descricao-produto">
@@ -102,9 +105,7 @@
                   </div>  
                   
                   <!-- Button trigger modal -->
-                  <a href="#" class=" btn-add" data-toggle="modal" data-target="#exampleModalCenter'.$id.'">
-                    <i class="fas fa-plus-circle"></i>
-                  </a>    
+                  <input type="submit" class="btn btn-success" value="Adicionar">
                 </div>
               </form>  
               </div>
@@ -128,9 +129,10 @@
                               <p>'.$c['descricao'].'</p>
 
                               <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-danger edit-btn" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter'.$id.'" style="background:#c31181;border:0px;">
                                 Editar
                               </button>
+                              <a href="'.URL_BASE.'admin/removerProduto/'.$c['id'].'" class="btn btn-danger">Remover</a>
                             </div>
                           </div>
                           
@@ -183,7 +185,8 @@
         </div>
       </div>
     </div>
-
+    
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>

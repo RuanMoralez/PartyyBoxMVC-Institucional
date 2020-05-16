@@ -29,16 +29,83 @@ class AdminController extends Controller{
         }
     }
     
-    public function index($c = 0){
+    public function index($m = array()){
         $produto = new Produto();
         $caixa = $produto->listarProduto(1);
         
-        $this->load('adm/painel',$caixa);
+        $this->load('adm/painel',$caixa,$m);
          
     }
     
     public function adicionarProduto(){
+        if($_POST){
+            
+            $img = array_filter($_FILES['img']);
+            
+            if( !empty($_POST['titulo']) || !empty($_POST['descicao']) || !empty($_FILES['img'])){
+                
+                if(!isset($img['error'])){
+                    $error = array();
+                
+                    if(!\preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $img["type"])){
+                        $error[1] = "Isso não é uma imagem.";
+                    } 
+                    
+                    if(count($error)==0){
+                    
+                        preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
+                    
+                        $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                
+                        $caminho_imagem =  "assets/img/festa_caixa/". $nome_imagem;
+                
+                        move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                
+                        $imagem = $caminho_imagem;
+                        
+                        $titulo = $_POST['titulo'];
+                        $descricao = $_POST['descricao'];
+                        
+                        $produto = new Produto();
+                        $produto->inserir($titulo, $descricao, $imagem);
+                        
+                        header("location: /partyyboxMVC/admin");
+                    } 
+                }
+            }
+           
+        }
         
+        $this->index();
+    }
+    
+    public function removerProduto($id){
+        $data = array(
+            'aviso'=>''
+        );
+        
+        $produto = new Produto();
+        $res = $produto->remover($id);
+        
+        if($res == true){
+            $data['aviso'] = '
+                <script>    
+                
+                    swal({
+                        title: "Sucesso!",
+                            text: "Produto removido...",
+                            icon: "success"
+                    })
+                </script>
+            ';
+            header("location: /partyyboxMVC/admin");
+        }else{
+            $data['aviso'] = '
+                Erro ao remover produto
+            ';
+        }
+        
+        $this->index($data);
     }
     
     public function atualizarProduto(){
@@ -69,11 +136,6 @@ class AdminController extends Controller{
             }else{
                 $imagem = $_POST['default'];
             }
-        
-        /*
-        echo "<pre>";
-        var_dump($_POST['default']);
-        */
         
             $titulo = $_POST['titulo'];
             $descricao = $_POST['descricao'];
