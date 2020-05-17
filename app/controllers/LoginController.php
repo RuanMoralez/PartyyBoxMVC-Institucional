@@ -17,7 +17,7 @@ use app\models\Usuario;
  */
 class LoginController extends Controller{
     
-    public function index (){
+    public function categoria (){
         session_start();
                 
         $data = array(

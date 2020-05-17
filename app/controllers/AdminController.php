@@ -29,11 +29,12 @@ class AdminController extends Controller{
         }
     }
     
-    public function index($m = array()){
-        $produto = new Produto();
-        $caixa = $produto->listarProduto(1);
+    public function categoria($p=1){
         
-        $this->load('adm/painel',$caixa,$m);
+        $produto = new Produto();
+        $caixa = $produto->listarProduto($p);
+        
+        $this->load('adm/painel',$caixa);
          
     }
     
@@ -66,9 +67,10 @@ class AdminController extends Controller{
                         
                         $titulo = $_POST['titulo'];
                         $descricao = $_POST['descricao'];
+                        $categoria = $_POST['categoria'];
                         
                         $produto = new Produto();
-                        $produto->inserir($titulo, $descricao, $imagem);
+                        $produto->inserir($titulo, $descricao, $imagem,$categoria);
                         
                         echo '
                             <script>
@@ -168,7 +170,7 @@ class AdminController extends Controller{
             header("location: /partyyboxMVC/admin");
         }
         
-        $this->index();
+        $this->categoria();
     }
     
     

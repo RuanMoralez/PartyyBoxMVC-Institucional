@@ -109,15 +109,15 @@ table {
 .dropdown-menu {
     margin-top:15px;
     width:180px;
-    background: #c31181;
+    background: #f6a20b;
     border:0;
 }
 .dropdown-menu a {
     color:#fff;
 }
 .dropdown-menu a:hover{
-    background:#f6a20b;
-    color:#fff;
+    background:#fff;
+    color:#f6a20b;
 }
 
 

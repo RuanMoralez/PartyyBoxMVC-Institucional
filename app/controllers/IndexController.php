@@ -17,7 +17,7 @@ use app\models\Produto;
  */
 class IndexController extends Controller{
     
-    public function index(){
+    public function categoria(){
         
         $p = new Produto();
 

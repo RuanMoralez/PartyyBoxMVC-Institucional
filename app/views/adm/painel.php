@@ -48,7 +48,6 @@
       <!--
       ***Painel****
       -->
-
       <div class="row">
         <div class="col-md-2 nopadding">
           <div class="painel">
@@ -56,15 +55,19 @@
             <h1>Administrador</h1>
             <ul>
               <a href="#"><li><i class="large material-icons">slideshow</i>Slide</li></a>
-              <a href="#"><li><i class="fas fa-box-open"></i>Caixa</li></a>
-              <a href="#"><li><i class="fas fa-shopping-basket"></i>Cesta</li></a>
-              <a href="#"><li><i class="large material-icons">local_florist</i></i>Buque</li></a>
+              <a href="<?php echo URL_BASE."admin/categoria/1"?>"><li><i class="fas fa-box-open"></i>Caixa</li></a>
+              <a href="<?php echo URL_BASE."admin/categoria/2"?>"><li><i class="fas fa-shopping-basket"></i>Cesta</li></a>
+              <a href="<?php echo URL_BASE."admin/categoria/3"?>"><li><i class="large material-icons">local_florist</i></i>Buque</li></a>
             </ul>
           </div>
         </div>
+        <!-- 
+         ****** Editar Sobre 
+         -->
         <div class="col-md-10 nopadding">
           <div class="sessao"><strong>Editar Sobre</strong></div>
           <div class="edit-sobre-caixa">
+          <form action="" method="POST">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-5 col-lg-5 edit-sobre-caixa-img" >
                 <img class="img-fluid" src="<?php echo URL_BASE."assets/img/festa_caixa/sobre_festa_caixa.jpg"?>" alt="">
@@ -77,6 +80,7 @@
                 <a href="#" class="modal-saiba-mais">Editar</a>
               </div>
             </div>
+          </form>
           </div>
 
           <!-- 
@@ -102,6 +106,7 @@
                   <div class="form-group">
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Titulo" name="titulo"><br>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva a descricao do produto" name="descricao"></textarea>
+                    <input type="hidden" name="categoria" value="<?php  echo ($caixa[0]['categoria']); ?>">
                   </div>  
                   
                   <!-- Button trigger modal -->
@@ -254,6 +259,19 @@
         
             reader.onload = function (e) {
               $('#blah').attr('src', e.target.result);
+            };
+          
+            reader.readAsDataURL(input.files[0]);
+          }
+      } 
+
+      function readEditUrl(input) {
+        
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+        
+            reader.onload = function (e) {
+              $('#blah-edit').attr('src', e.target.result);
             };
           
             reader.readAsDataURL(input.files[0]);
