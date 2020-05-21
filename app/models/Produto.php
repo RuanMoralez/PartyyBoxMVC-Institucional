@@ -8,8 +8,16 @@ class Produto extends Model{
         parent::__construct();
     }
     
-    public function listarProduto($num){
-        $query = "SELECT * FROM Produto WHERE categoria = {$num} ORDER BY id DESC" ;
+    public function listar($categoria){
+        $query =
+            "SELECT 
+                 id
+                ,titulo
+                ,descricao
+                ,endereco
+             FROM Produto
+             WHERE id_categoria = {$categoria}
+             ORDER BY id" ;
         $res = $this->db->query($query);
                 
         return $res->fetchAll();
@@ -19,7 +27,7 @@ class Produto extends Model{
         try{
             
             $stmt = $this->db->prepare("
-                INSERT INTO Produto (titulo, descricao, endereco, categoria)
+                INSERT INTO Produto (titulo, descricao, endereco, id_categoria)
                 VALUES (:titulo, :descricao, :endereco, :categoria)
             ");
             $stmt->execute(array(

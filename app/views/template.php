@@ -223,13 +223,11 @@
     <div class="conteudo-sobre remove-scroll" id="ancora-festa-na-caixa">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-5 col-lg-5 wow slideInLeft" >
-          <img class="img-fluid" src="<?php echo URL_BASE."assets/img/festa_caixa/sobre_festa_caixa.jpg"?>" alt="">
+          <img class="img-fluid" src="<?php echo URL_BASE.$ccaixa[0]['categoria_endereco'] ?>" alt="">
         </div>
         <div class="col-12 col-sm-6 col-md-7 col-lg-5 wow slideInRight">
-          <h3>Festa na Caixa</h3>
-          <p>Trabalhamos com diversos tamanhos de kits, com formatos pré-definidos, ou você pode escolher somente os itens que necessita.<br><br>
-           Desde um mesversário, para você comemorar o mês a mês do bebê, passando por kits só com a papelaria personalizada, opções para festa na escola, para aquele bolinho em família, até festas para bastante gente.<br><br>
-           Pensou em festa, a gente pode te ajudar.</p><br><br>
+          <h3><?php echo $ccaixa[0]['categoria_titulo']?></h3>
+          <p><?php echo $ccaixa[0]['categoria_descricao'] ?></p><br><br>
           <a href="#" class="modal-saiba-mais">Saiba mais</a>
         </div>
       </div>
@@ -245,21 +243,19 @@
         
           
         <?php
-            foreach ($caixa as $pCaixa){
-                
-                echo '
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                        <div class="descricao-produto">
-                            
-                            <h3>'.$pCaixa['titulo'].'</h3>
-                            <p>'.$pCaixa['descricao'].'</p>
-                            <a href="#" class="modal-saiba-mais">saiba mais</a>
+            foreach ($caixa as $key => $pCaixa){
+              echo '
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="lista-produto">
+                            <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                            <div class="descricao-produto">
+                                <h3>'.$pCaixa['titulo'].'</h3>
+                                <p>'.$pCaixa['descricao'].'</p>
+                                <a href="#" class="modal-saiba-mais">saiba mais</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                ';
+              ';
             }
         ?>
         <!--     
@@ -318,13 +314,11 @@
     <div class="conteudo-sobre cesta remove-scroll" id="ancora-cesta-cafe-manha">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-5 col-lg-5">
-          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE."assets/img/cesta/cesta_bud.jpg"?>" alt="">
+          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE.$ccesta[0]['categoria_endereco']?>" alt="">
         </div>
         <div class="col-12 col-sm-12 col-md-7 col-lg-5 wow slideInRight">
-          <h3>Festa na Caixa</h3>
-          <p>Trabalhamos com diversos tamanhos de kits, com formatos pré-definidos, ou você pode escolher somente os itens que necessita.</p>
-          <p>Desde um mesversário, para você comemorar o mês a mês do bebê, passando por kits só com a papelaria personalizada, opções para festa na escola, para aquele bolinho em família, até festas para bastante gente.</p>
-          <p>Pensou em festa, a gente pode te ajudar.</p><br>
+          <h3><?php echo $ccesta[0]['categoria_titulo']?></h3>
+          <p><?php echo $ccesta[0]['categoria_descricao']?></p><br>
           <a href="#" class="modal-saiba-mais">Saiba mais</a>  
         </div>
       </div>
@@ -338,11 +332,11 @@
           
         <?php
         
-            foreach ( $cesta as $pCesta){
-                echo ' 
+            foreach ( $cesta as $key => $pCesta){
+              echo ' 
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.'/assets/'.$pCesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                        <div style="background:url('.URL_BASE.$pCesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                         <div class="descricao-produto">
                             <h3>'.$pCesta['titulo'].'</h3>
                             <p>'.$pCesta['descricao'].'</p>
@@ -352,7 +346,6 @@
                 </div>
                 ';
             }
-            
         ?>
         <!--   
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -410,12 +403,10 @@
     <div class="sobre-buque remove-scroll" id="ancora-buque-chocolate">
       <div class="row">
         <div class="col-12">
-          <h3 class="wow slideInDown">Buquê de Chocolate</h3>
-          <img class="wow slideInLeft" src="<?php echo URL_BASE."assets/img/buque_chocolate/sobre_buque.jpg"?>" alt="">
+          <h3 class="wow slideInDown"><?php if(!empty($cbuque[0]['categoria_titulo'])){ echo $cbuque[0]['categoria_titulo'];}else{ echo "Nao cadastrado";} ?></h3>
+          <img class="wow slideInLeft" src="<?php if(!empty($cbuque[0]['categoria_endereco'])){ echo $cbuque[0]['categoria_endereco'];}else{ echo "Nao cadastrado";} ?>" alt="">
           <div class="wow slideInRight">
-            <p>Trabalhamos com diversos tamanhos de kits, com formatos pré-definidos, ou você pode escolher somente os itens que necessita.</p>
-            <p>Desde um mesversário, para você comemorar o mês a mês do bebê, passando por kits só com a papelaria personalizada, opções para festa na escola, para aquele bolinho em família, até festas para bastante gente.</p>
-            <p>Pensou em festa, a gente pode te ajudar.</p><br><br>
+            <p><?php if(!empty($cbuque[0]['categoria_descricao'])){ echo $cbuque[0]['categoria_descricao'];}else{ echo "Nao cadastrado";} ?></p><br><br>
             <a href="#buque-chocolate" class="modal-saiba-mais">Saiba mais</a>
           </div>
         </div>
@@ -429,11 +420,12 @@
       <div class="row">
           
           <?php
-            foreach($buque as $pBuque){
-                echo '
+
+            foreach($buque as $key => $pBuque){
+              echo ' 
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.'/assets/'.$pBuque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                        <div style="background:url('.URL_BASE.$pBuque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                         <div class="descricao-produto">
                             <h3>'.$pBuque['titulo'].'</h3>
                             <p>'.$pBuque['descricao'].'</p>
@@ -441,7 +433,7 @@
                         </div>
                     </div>
                 </div>
-                ';
+              ';
             }
           ?>
         

@@ -13,6 +13,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Usuario;
 use app\models\Produto;
+use app\models\Categoria;
 
 /**
  * Description of AdminController
@@ -29,22 +30,27 @@ class AdminController extends Controller{
         }
     }
     
-    public function categoria($p=1){
+    public function categoria($num=1){
         
-        $produto = new Produto();
-        $caixa = $produto->listarProduto($p);
+        $p = new Produto();
+        $c = new Categoria();
         
-        $this->load('adm/painel',$caixa);
-         
+        $produto = $p->listar($num);
+        $categoria = $c->listar($num);
+              
+        $this->loadAdmin('adm/painel',$produto,$categoria);
     }
     
     public function adicionarProduto(){
-         $data=array();
-         
+                  
         if($_POST){
             
-            if( !empty($_FILES['img']['name']) && !empty($_POST['titulo']) && !empty($_POST['descricao'])){
-                $img = array_filter($_FILES['img']);
+            $categoria = $_POST['categoria'];
+            
+            if($categoria != 0){
+                
+                if( !empty($_FILES['img']['name']) && !empty($_POST['titulo']) && !empty($_POST['descricao'])){
+                    $img = array_filter($_FILES['img']);
                 
                 if(!isset($img['error'])){
                     $error = array();
@@ -93,9 +99,23 @@ class AdminController extends Controller{
                         </script>
                     ';
             }
+        }else{
+            echo '
+                <script>
+                    $(document).ready( function(){
+
+                        swal({
+                            title: "Erro!",
+                            text: "Categoria nao existe...",
+                            icon: "error"
+                        })
+                    });
+                </script>
+                ';
+            }
         }
     }
-    
+   
     public function removerProduto(){
         
         $id = $_POST['id'];
@@ -113,8 +133,8 @@ class AdminController extends Controller{
                 
                     swal({
                         title: "Sucesso!",
-                            text: "Produto removido...",
-                            icon: "success"
+                        text: "Produto removido...",
+                        icon: "success"
                     })
                 </script>
             ';
@@ -173,10 +193,70 @@ class AdminController extends Controller{
         $this->categoria();
     }
     
-    
-    
-    
-    
+    public function atualizarSessao(){
+        
+        $categoria_id = $_POST['categoria'];
+        $imagem = "";
+        
+        if( $categoria_id >= 1 && $categoria_id <= 3 ){
+           
+            $img = array_filter($_FILES['img']);
+            
+            if(!isset($img['error'])){
+                $error = array();
+                
+                if(!\preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $img["type"])){
+                    $error[1] = "Isso não é uma imagem.";
+                } 
+                
+                if(count($error)==0){
+                    
+                    preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
+                    
+                    $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                    
+                    if($categoria_id == 1){
+                        $caminho_imagem =  "assets/img/festa_caixa/".$nome_imagem;
+                    }else if($categoria_id == 2){
+                        $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
+                    }else {
+                        $caminho_imagem =  "assets/img/buque_chocolate/".$nome_imagem;
+                    }
+                    
+                    move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                
+                    $imagem = $caminho_imagem;
+                }
+            }else{
+                $imagem = $_POST['default'];
+            }
+        
+            $titulo = $_POST['titulo'];
+            $descricao = nl2br($_POST['descricao']);
+            
+            $categoria = new Categoria();
+            $categoria->atualizar($categoria_id, $imagem, $titulo, $descricao);
+            
+            echo '
+                <script>    
+                
+                    swal({
+                        title: "Sucesso!",
+                        text: "Sessao edita com sucesso...",
+                        icon: "success"
+                    })
+                    
+                    //Hibilitar editar Sessao
+                    $(document).ready(function() {
+                        $(".swal-button").click(function (){
+                            // desabilitar o campo 
+                            $(".editar-sessao").prop("disabled", true);
+                        });
+                    });    
+                </script>
+                ';
+        }
+    }
     
     public function doLogout($token){
         $token_session = md5(session_id());
