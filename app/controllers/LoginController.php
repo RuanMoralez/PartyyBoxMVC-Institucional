@@ -38,7 +38,7 @@ class LoginController extends Controller{
             if($uid > 0 ){
                 session_start ();
                 $_SESSION['usuario'] = $uid;
-                header('location: /partyyboxMVC/admin/categoria/1');
+                header('location: /PartyyBoxMVC/admin/categoria/1');
                 
             }else{
                 unset($_POST);
