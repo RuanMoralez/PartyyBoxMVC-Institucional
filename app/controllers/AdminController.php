@@ -26,7 +26,7 @@ class AdminController extends Controller{
         $usuario = new Usuario();
         
         if($usuario->isLogged() == false){
-            header('location: /partyyboxMVC/login');
+            header('location: /PartyyBoxMVC/login');
         }
     }
     
@@ -138,7 +138,7 @@ class AdminController extends Controller{
                     })
                 </script>
             ';
-            header("location: /partyyboxMVC/admin");
+            header("location: /PartyyBoxMVC/admin");
         }else{
             $data['aviso'] = '
                 Erro ao remover produto

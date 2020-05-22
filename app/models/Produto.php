@@ -15,7 +15,7 @@ class Produto extends Model{
                 ,titulo
                 ,descricao
                 ,endereco
-             FROM Produto
+             FROM produto
              WHERE id_categoria = {$categoria}
              ORDER BY id" ;
         $res = $this->db->query($query);

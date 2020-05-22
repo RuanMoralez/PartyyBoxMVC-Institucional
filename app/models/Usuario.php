@@ -30,7 +30,7 @@ class Usuario extends Model{
     }
     
     public function verificaUsuario($user,$pass){
-        $query = $this->db->query("SELECT * FROM Usuario WHERE usuario = '{$user}' AND senha = '{$pass}'");
+        $query = $this->db->query("SELECT * FROM usuario WHERE usuario = '{$user}' AND senha = '{$pass}'");
         if($query->rowCount() > 0 ){
             $uid = $query->fetch();
             return $uid['id'];
