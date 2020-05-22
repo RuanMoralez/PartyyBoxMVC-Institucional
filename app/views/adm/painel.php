@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <div class="row menu">
         <div class="col-md-9"></div>
-        <div class="col-md-3">
+        <div class="col-md-3 nopadding">
           <div class="alerta">
             <ul>
               <a href=""><li><i class="fas fa-bell"></i></li></a>
