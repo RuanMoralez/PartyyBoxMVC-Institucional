@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="<?php echo URL_BASE."assets/css/Animate/animate.css"?>" type="text/css"> 
     <script src="https://kit.fontawesome.com/cc462c1dc6.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
+
   </head>
   <body>
     <!----  
@@ -234,14 +237,35 @@
     </div>
 
 
+    
+
     <!----  
     ****** Lista de produtos (Caixa) ******
     -->
     
-    <div class="container-fluid wow slideInLeft" data-wow-delay="0.5s">
+    <div class="container-fluid wow slideInLeft produto-caixa-desktop" data-wow-delay="0.5s">
       <div class="row">
         
-          
+        
+        <?php
+            foreach ($caixa as $key => $pCaixa){
+              echo '
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
+                        <div class="lista-produto">
+                            <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                            <div class="descricao-produto">
+                                <h3>'.$pCaixa['titulo'].'</h3>
+                                <p>'.$pCaixa['descricao'].'</p>
+                                <a href="#" class="modal-saiba-mais">saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+              ';
+            }
+        ?>
+        
+
+        <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">
         <?php
             foreach ($caixa as $key => $pCaixa){
               echo '
@@ -258,53 +282,9 @@
               ';
             }
         ?>
-        <!--     
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto caixa-produto-0"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
         </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto caixa-produto-1"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto caixa-produto-2"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto caixa-produto-3"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        -->
+
+
       </div>
     </div>
 
@@ -329,7 +309,25 @@
     -->
     <div class="container-fluid remove-scroll">
       <div class="row wow slideInRight" data-wow-delay="0.5s">
-          
+        
+        <?php
+          foreach ( $cesta as $key => $pCesta){
+            echo ' 
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
+                  <div class="lista-produto">
+                      <div style="background:url('.URL_BASE.$pCesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                      <div class="descricao-produto">
+                          <h3>'.$pCesta['titulo'].'</h3>
+                          <p>'.$pCesta['descricao'].'</p>
+                          <a href="#" class="modal-saiba-mais">saiba mais</a>
+                      </div>
+                  </div>
+              </div>
+              ';
+          }
+        ?>    
+
+        <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">    
         <?php
         
             foreach ( $cesta as $key => $pCesta){
@@ -347,53 +345,7 @@
                 ';
             }
         ?>
-        <!--   
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto cesta-produto-0"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
         </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto cesta-produto-1"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto cesta-produto-2"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto cesta-produto-3"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        -->  
       </div>
     </div>
 
@@ -418,7 +370,26 @@
     -->
     <div class="container-fluid wow slideInLeft" data-wow-delay="0.5s">
       <div class="row">
-          
+            
+
+        <?php
+          foreach($buque as $key => $pBuque){
+            echo ' 
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
+                <div class="lista-produto">
+                    <div style="background:url('.URL_BASE.$pBuque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                    <div class="descricao-produto">
+                        <h3>'.$pBuque['titulo'].'</h3>
+                        <p>'.$pBuque['descricao'].'</p>
+                        <a href="#" class="modal-saiba-mais">saiba mais</a>
+                    </div>
+                </div>
+              </div>
+            ';
+          }
+        ?> 
+
+        <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">    
           <?php
 
             foreach($buque as $key => $pBuque){
@@ -436,54 +407,7 @@
               ';
             }
           ?>
-        
-        <!-- 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto buque-produto-0"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto buque-produto-1"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto buque-produto-2"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="lista-produto">
-            <div class="produto buque-produto-3"></div>
-            <div class="descricao-produto">
-              <h3>Cesta 1</h3>
-              <p>Trabalhamos com decorações para todos os tipos de comemorações - mesversários, aniversários,
-              batizados, chá de bebê, chá de panela</p>
-              <a href="#" class="modal-saiba-mais">saiba mais</a>
-            </div>
-          </div>
-        </div>
-        
-        -->
       </div>
     </div>
 
@@ -691,10 +615,26 @@
     </div>    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript"></script>
     <script>
-     
+
+      $('.carrosel-cesta').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4
+      });
+            
+      $('.carrosel-produto').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4
+      });
+      
+
     //Emite alerta pagina em construção
       $( function(){
         $('.modal-saiba-mais').on("click",function(e){
@@ -723,7 +663,7 @@
     <script>
 	    new WOW().init();
     </script>
-    <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
+    
     <script src="<?php echo URL_BASE."assets/js/program.js"?>" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

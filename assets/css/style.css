@@ -93,8 +93,17 @@ table {
     border: 0 !important;
 }
 
+.slick-prev.slick-arrow:before, .slick-next.slick-arrow:before{
+    color: #f6a20b;
+}
+
 /* Telefones em paisagem e abaixo */
 @media (max-width: 480px) {
+    
+
+    .carrosel-produto{
+        display: none !important;
+    }
     
 /*-------- Menu Social Vertical --------*/
 
@@ -686,7 +695,10 @@ table {
 
 /* Telefones em paisagem a tablet em retrato */
 @media (min-width: 481px) and (max-width: 767px) {
-    
+    .carrosel-produto{
+        display: none !important;
+    }
+
     /*-------- Menu Social Vertical --------*/
     .link-up{
         top: 85% !important;
@@ -1278,7 +1290,10 @@ table {
 
 /* Tablet em retrato a paisagem e desktop */
 @media (min-width: 768px) and (max-width: 1199px) {
-    
+    .carrosel-produto{
+        display: none !important;
+    }
+
     /*-------- Menu Social Vertical --------*/
     .link-up-whats{
         display: none !important; 
@@ -1864,6 +1879,11 @@ table {
 
 /* Desktop grande */
 @media (min-width: 1200px) {
+
+    .produto-mobile{
+        display: none !important;
+    }
+
     /*-------- Menu Mobile --------*/
     .menu{
         width: 100%;
@@ -2058,7 +2078,8 @@ table {
     }
 
 
-    /*-------- Lista de Produtos (Cesta e Caixa) --------*/    
+    /*-------- Lista de Produtos ( Caixa ) --------*/    
+    
     .lista-produto{
         text-align: center;
         margin: 10px 0px;
@@ -2122,6 +2143,7 @@ table {
 
     /*-------- Sobre Cesta --------*/
     .cesta{
+        margin-top: 0px;
         background: #c31181 !important;
         padding: 60px 30px!important;
     }
@@ -2165,9 +2187,9 @@ table {
     /*-------- Sobre Buque de cocholate --------*/
 
     .sobre-buque{
+        margin-bottom: 30px;
         text-align: center;
         padding: 30px 5%;
-        margin: 20px 0;
         background-color:#c31181;
         color:#fff;
     }
