@@ -18,48 +18,14 @@
     <h1>Painel Administrativo</h1>
     -->
     <div class="container-fluid">
-      <div class="row menu">
-        <div class="col-md-9"></div>
-        <div class="col-md-3 nopadding-right">
-          <div class="alerta">
-            <ul>
-              <a href=""><li><i class="fas fa-bell"></i></li></a>
-              <a href=""><li><i class="fas fa-comment-alt"></i></li></a>
-            </ul>  
-          </div>
-          <div class="perfil">
-            <div class="dropdown">
-              <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-              <strong>Carina Oliveira</strong>
-              <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/perfil/carina_perfil.jpg"?>">
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Editar</a></li>
-                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                <div class="dropdown-divider"></div>
-                <li><a class="dropdown-item" href='<?php echo URL_BASE."admin/doLogout/". md5(session_id()) ?>'>Sair</a></li>
-              </ul>
-            </div>
-          </div>  
-        </div>
-      </div>
-      
+      <?php include __DIR__.'/../elemento/menu.php' ?>
+        
       <!--
       ***Painel****
       -->
+      
       <div class="row">
-        <div class="col-md-2 nopadding">
-          <div class="painel">
-            <img class="rounded-circle" src="<?php echo URL_BASE."assets/adm/img/logo/partyybox_logo.jpeg"?>" alt="">
-            <h1>Administrador</h1>
-            <ul>
-              <a href="#"><li><i class="large material-icons">slideshow</i>Slide</li></a>
-              <a href="<?php echo URL_BASE."admin/categoria/1"?>"><li><i class="fas fa-box-open"></i>Caixa</li></a>
-              <a href="<?php echo URL_BASE."admin/categoria/2"?>"><li><i class="fas fa-shopping-basket"></i>Cesta</li></a>
-              <a href="<?php echo URL_BASE."admin/categoria/3"?>"><li><i class="large material-icons">local_florist</i></i>Buque</li></a>
-            </ul>
-          </div>
-        </div>
+        <?php include __DIR__.'/../elemento/feture.php' ?>
         
         <!-- 
          ****** Editar Sessao Produto 
@@ -204,6 +170,8 @@
 
           </div>
         </div>
+          
+        
       </div>
     </div>
     
@@ -373,3 +341,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

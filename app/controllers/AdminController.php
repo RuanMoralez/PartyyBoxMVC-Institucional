@@ -14,6 +14,7 @@ use app\core\Controller;
 use app\models\Usuario;
 use app\models\Produto;
 use app\models\Categoria;
+use app\models\Slide;
 
 /**
  * Description of AdminController
@@ -30,15 +31,22 @@ class AdminController extends Controller{
         }
     }
     
+    public function index($nume=0){
+        //$dado["view"] = "adm/edit/carrosel";
+        $this->load("adm/edit/carrosel",$dado=array());
+    }
+    
     public function categoria($num=1){
-        
+       
         $p = new Produto();
         $c = new Categoria();
         
-        $produto = $p->listar($num);
-        $categoria = $c->listar($num);
-              
-        $this->loadAdmin('adm/painel',$produto,$categoria);
+        $dado = array(
+            "produto" =>$p->listarCategoria($num),
+            "categoria" =>$c->listarCategoria($num) 
+        ); 
+        
+        $this->load('adm/edit/categoria',$dado);
     }
     
     public function adicionarProduto(){
@@ -241,7 +249,7 @@ class AdminController extends Controller{
                 <script>    
                 
                     swal({
-                        title: "Sucesso!",
+                        title: "Sucesso/!",
                         text: "Sessao edita com sucesso...",
                         icon: "success"
                     })
@@ -258,6 +266,64 @@ class AdminController extends Controller{
         }
     }
     
+    
+    public function adicionarSlide(){
+      
+        if($_POST){
+            if( !empty($_FILES['img']['name']) && !empty($_POST['titulo']) && !empty($_POST['descricao'])){
+                    $img = array_filter($_FILES['img']);
+                
+                if(!isset($img['error'])){
+                    $error = array();
+                
+                    if(!\preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $img["type"])){
+                        $error[1] = "Isso não é uma imagem.";
+                    } 
+                    
+                    if(count($error)==0){
+                    
+                        preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
+                    
+                        $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                
+                        $caminho_imagem =  "assets/img/slide/". $nome_imagem;
+                
+                        move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                
+                        $imagem = $caminho_imagem;
+                        
+                        $titulo = $_POST['titulo'];
+                        $descricao = $_POST['descricao'];
+                        
+                        $slide = new Slide();
+                        $slide->adicionar($titulo, $descricao, $imagem);
+                        
+                        echo '
+                            <script>    
+                
+                                swal({
+                                    title: "Sucesso!",
+                                    text: "Sessao edita com sucesso...",
+                                    icon: "success"
+                                });
+                            </script>
+                        ';
+                    } 
+                }
+            }else {
+            echo 
+                '<script>
+                    swal({
+                        title: "Info!",
+                        text: "Preencha os campos obrigatórios",
+                        icon: "warning"
+                    });
+                </script>
+                ';
+            }
+        }
+
+    }
     public function doLogout($token){
         $token_session = md5(session_id());
         if(isset($token) && $token === $token_session){

@@ -8,15 +8,31 @@ class Produto extends Model{
         parent::__construct();
     }
     
-    public function listar($categoria){
+    public function listar(){
         $query =
             "SELECT 
                  id
                 ,titulo
                 ,descricao
                 ,endereco
+                ,id_categoria
              FROM produto
-             WHERE id_categoria = {$categoria}
+             ORDER BY id" ;
+        $res = $this->db->query($query);
+                
+        return $res->fetchAll();
+    }
+    
+    public function listarCategoria($num){
+        $query =
+            "SELECT 
+                 id
+                ,titulo
+                ,descricao
+                ,endereco
+                ,id_categoria
+             FROM produto
+             WHERE id_categoria = {$num}
              ORDER BY id" ;
         $res = $this->db->query($query);
                 

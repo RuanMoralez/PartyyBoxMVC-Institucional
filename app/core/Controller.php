@@ -16,21 +16,8 @@ namespace app\core;
  */
 class Controller {
     
-    public function load($view, $caixa = array(),$cesta = array(),$buque = array(),$ccaixa = array(),$ccesta = array(),$cbuque = array()){
-        extract($caixa);
-        extract($cesta);
-        extract($buque);
-        
-        extract($ccaixa);
-        extract($ccesta);
-        extract($cbuque);
+    public function load($view,$viewData){
+        extract($viewData);
         include "app/views/{$view}.php";
     }
-    
-    public function loadAdmin($view, $produto = array(), $categoria = array()){
-        extract($produto);
-        extract($categoria);
-        include "app/views/{$view}.php";
-    }
-    
 }

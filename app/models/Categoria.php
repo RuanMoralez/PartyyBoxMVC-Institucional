@@ -19,7 +19,7 @@ class Categoria extends Model {
         parent::__construct();
     }
     
-    public function listar($categoria){
+    public function listar(){
         $query =
             "SELECT 
                  categoria_id
@@ -27,7 +27,21 @@ class Categoria extends Model {
                 ,categoria_descricao
                 ,categoria_endereco
              FROM categoria
-             WHERE categoria_id = {$categoria}
+             ORDER BY categoria_id" ;
+        $res = $this->db->query($query);
+                
+        return $res->fetchAll();
+    }
+    
+    public function listarCategoria($num){
+        $query =
+            "SELECT 
+                 categoria_id
+                ,categoria_titulo
+                ,categoria_descricao
+                ,categoria_endereco
+             FROM categoria
+             WHERE categoria_id = {$num}
              ORDER BY categoria_id" ;
         $res = $this->db->query($query);
                 

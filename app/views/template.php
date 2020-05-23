@@ -218,19 +218,18 @@
         </a>
       </div>
     </div>
-
-
+    
     <!----  
         ****** Sobre Festa na Caixa ******
     -->
     <div class="conteudo-sobre remove-scroll" id="ancora-festa-na-caixa">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-5 col-lg-5 wow slideInLeft" >
-          <img class="img-fluid" src="<?php echo URL_BASE.$ccaixa[0]['categoria_endereco'] ?>" alt="">
+          <img class="img-fluid" src="<?php echo URL_BASE.$categoria[0]['categoria_endereco'] ?>" alt="">
         </div>
         <div class="col-12 col-sm-6 col-md-7 col-lg-5 wow slideInRight">
-          <h3><?php echo $ccaixa[0]['categoria_titulo']?></h3>
-          <p><?php echo $ccaixa[0]['categoria_descricao'] ?></p><br><br>
+          <h3><?php echo $categoria[0]['categoria_titulo']?></h3>
+          <p><?php echo $categoria[0]['categoria_descricao'] ?></p><br><br>
           <a href="#" class="modal-saiba-mais">Saiba mais</a>
         </div>
       </div>
@@ -246,40 +245,42 @@
     <div class="container-fluid wow slideInLeft produto-caixa-desktop" data-wow-delay="0.5s">
       <div class="row">
         
-        
         <?php
-            foreach ($caixa as $key => $pCaixa){
-              echo '
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
-                        <div class="lista-produto">
-                            <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                            <div class="descricao-produto">
-                                <h3>'.$pCaixa['titulo'].'</h3>
-                                <p>'.$pCaixa['descricao'].'</p>
-                                <a href="#" class="modal-saiba-mais">saiba mais</a>
+            foreach ($produto as $key => $caixa){
+                if($caixa['id_categoria'] == 1){
+                    echo '
+                        <div class="col-12 col-sm-6 col-md-4 produto-mobile">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.'/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$caixa['titulo'].'</h3>
+                                    <p>'.$caixa['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-              ';
+                    ';
+                }
             }
         ?>
         
-
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">
         <?php
-            foreach ($caixa as $key => $pCaixa){
-              echo '
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="lista-produto">
-                            <div style="background:url('.URL_BASE.'/'.$pCaixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                            <div class="descricao-produto">
-                                <h3>'.$pCaixa['titulo'].'</h3>
-                                <p>'.$pCaixa['descricao'].'</p>
-                                <a href="#" class="modal-saiba-mais">saiba mais</a>
+            foreach ($produto as $key => $caixa){
+                if($caixa['id_categoria'] == 1){
+                    echo '
+                        <div class="col-md-3">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.'/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$caixa['titulo'].'</h3>
+                                    <p>'.$caixa['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-              ';
+                    ';
+                }
             }
         ?>
         </div>
@@ -294,11 +295,11 @@
     <div class="conteudo-sobre cesta remove-scroll" id="ancora-cesta-cafe-manha">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-5 col-lg-5">
-          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE.$ccesta[0]['categoria_endereco']?>" alt="">
+          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE.$categoria[1]['categoria_endereco']?>" alt="">
         </div>
         <div class="col-12 col-sm-12 col-md-7 col-lg-5 wow slideInRight">
-          <h3><?php echo $ccesta[0]['categoria_titulo']?></h3>
-          <p><?php echo $ccesta[0]['categoria_descricao']?></p><br>
+          <h3><?php echo $categoria[1]['categoria_titulo']?></h3>
+          <p><?php echo $categoria[1]['categoria_descricao']?></p><br>
           <a href="#" class="modal-saiba-mais">Saiba mais</a>  
         </div>
       </div>
@@ -311,38 +312,42 @@
       <div class="row wow slideInRight" data-wow-delay="0.5s">
         
         <?php
-          foreach ( $cesta as $key => $pCesta){
-            echo ' 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
-                  <div class="lista-produto">
-                      <div style="background:url('.URL_BASE.$pCesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                      <div class="descricao-produto">
-                          <h3>'.$pCesta['titulo'].'</h3>
-                          <p>'.$pCesta['descricao'].'</p>
-                          <a href="#" class="modal-saiba-mais">saiba mais</a>
-                      </div>
-                  </div>
-              </div>
-              ';
+          foreach ( $produto as $key => $cesta){
+              if($cesta['id_categoria'] == 2){
+                echo ' 
+                    <div class="col-12 col-sm-6 col-md-4 produto-mobile">
+                        <div class="lista-produto">
+                            <div style="background:url('.URL_BASE.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                            <div class="descricao-produto">
+                                <h3>'.$cesta['titulo'].'</h3>
+                                <p>'.$cesta['descricao'].'</p>
+                                <a href="#" class="modal-saiba-mais">saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+                ';
+              }
           }
         ?>    
 
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">    
         <?php
         
-            foreach ( $cesta as $key => $pCesta){
-              echo ' 
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.$pCesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                        <div class="descricao-produto">
-                            <h3>'.$pCesta['titulo'].'</h3>
-                            <p>'.$pCesta['descricao'].'</p>
-                            <a href="#" class="modal-saiba-mais">saiba mais</a>
+            foreach ( $produto as $key => $cesta){
+                if($cesta['id_categoria'] == 2){
+                    echo ' 
+                        <div class="col-md-3">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$cesta['titulo'].'</h3>
+                                    <p>'.$cesta['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                ';
+                    ';
+                }
             }
         ?>
         </div>
@@ -355,10 +360,10 @@
     <div class="sobre-buque remove-scroll" id="ancora-buque-chocolate">
       <div class="row">
         <div class="col-12">
-          <h3 class="wow slideInDown"><?php if(!empty($cbuque[0]['categoria_titulo'])){ echo $cbuque[0]['categoria_titulo'];}else{ echo "Nao cadastrado";} ?></h3>
-          <img class="wow slideInLeft" src="<?php if(!empty($cbuque[0]['categoria_endereco'])){ echo $cbuque[0]['categoria_endereco'];}else{ echo "Nao cadastrado";} ?>" alt="">
+          <h3 class="wow slideInDown"><?php if(!empty($categoria[2]['categoria_titulo'])){ echo $categoria[2]['categoria_titulo'];}else{ echo "Nao cadastrado";} ?></h3>
+          <img class="wow slideInLeft" src="<?php if(!empty($categoria[2]['categoria_endereco'])){ echo $categoria[2]['categoria_endereco'];}else{ echo "Nao cadastrado";} ?>" alt="">
           <div class="wow slideInRight">
-            <p><?php if(!empty($cbuque[0]['categoria_descricao'])){ echo $cbuque[0]['categoria_descricao'];}else{ echo "Nao cadastrado";} ?></p><br><br>
+            <p><?php if(!empty($categoria[2]['categoria_descricao'])){ echo $categoria[2]['categoria_descricao'];}else{ echo "Nao cadastrado";} ?></p><br><br   >
             <a href="#buque-chocolate" class="modal-saiba-mais">Saiba mais</a>
           </div>
         </div>
@@ -373,38 +378,42 @@
             
 
         <?php
-          foreach($buque as $key => $pBuque){
-            echo ' 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 produto-mobile">
-                <div class="lista-produto">
-                    <div style="background:url('.URL_BASE.$pBuque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                    <div class="descricao-produto">
-                        <h3>'.$pBuque['titulo'].'</h3>
-                        <p>'.$pBuque['descricao'].'</p>
-                        <a href="#" class="modal-saiba-mais">saiba mais</a>
-                    </div>
-                </div>
-              </div>
-            ';
-          }
+            foreach($produto as $key => $buque){
+                if($buque['id_categoria'] == 3){
+                    echo ' 
+                        <div class="col-12 col-sm-6 col-md-4 produto-mobile">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$buque['titulo'].'</h3>
+                                    <p>'.$buque['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                }
+            }
         ?> 
 
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">    
           <?php
 
-            foreach($buque as $key => $pBuque){
-              echo ' 
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.$pBuque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
-                        <div class="descricao-produto">
-                            <h3>'.$pBuque['titulo'].'</h3>
-                            <p>'.$pBuque['descricao'].'</p>
-                            <a href="#" class="modal-saiba-mais">saiba mais</a>
+            foreach ( $produto as $key => $buque){
+                if($buque['id_categoria'] == 3){
+                    echo ' 
+                        <div class="col-md-3 ">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$buque['titulo'].'</h3>
+                                    <p>'.$buque['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-              ';
+                    ';
+                }
             }
           ?>
         </div>
@@ -616,16 +625,10 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="<?php echo URL_BASE."assets/js/jquery.js"?>" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" type="text/javascript"></script>
+    <script src="<?php echo URL_BASE."assets/js/slick.js"?>" type="text/javascript"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" type="text/javascript"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript"></script>
     <script>
-
-      $('.carrosel-cesta').slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4
-      });
             
       $('.carrosel-produto').slick({
         dots: true,

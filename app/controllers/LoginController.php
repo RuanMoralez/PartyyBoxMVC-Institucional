@@ -17,7 +17,7 @@ use app\models\Usuario;
  */
 class LoginController extends Controller{
     
-    public function categoria (){
+    public function index (){
         session_start();
                 
         $data = array(
@@ -38,7 +38,7 @@ class LoginController extends Controller{
             if($uid > 0 ){
                 session_start ();
                 $_SESSION['usuario'] = $uid;
-                header('location: /PartyyBoxMVC/admin/categoria/1');
+                header('location: /PartyyBoxMVC/admin');
                 
             }else{
                 unset($_POST);

@@ -17,20 +17,17 @@ use app\models\Categoria;
  * @author Ruan Moralez
  */
 class IndexController extends Controller{
-    
-    public function categoria(){
+       
+    public function index(){
         
         $p = new Produto();
         $c = new Categoria();
         
-        $caixa = $p->listar(1);
-        $cesta = $p->listar(2);
-        $buque = $p->listar(3);
+        $data = array(
+            "produto" => $p->listar(),
+            "categoria" => $c->listar()
+        );
         
-        $ccaixa = $c->listar(1);
-        $ccesta = $c->listar(2);
-        $cbuque = $c->listar(3);
-        
-        $this->load('template',$caixa,$cesta,$buque, $ccaixa, $ccesta, $cbuque);  
+        $this->load('template',$data);  
     }
 }
