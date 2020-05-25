@@ -38,6 +38,18 @@
 }
 .btn-success{
     margin-top: 30px !important;
+    margin-right:10px;
+    
+}
+
+.salvar{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+.removerProduto{
+    margin-top: 30px !important;
 }
 
 p{

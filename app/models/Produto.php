@@ -73,7 +73,6 @@ class Produto extends Model{
                 ':descricao' => $descricao,     
                 ':endereco' => $endereco   
             ));
-        
         }catch(PDOException $e){    
             echo "Error ".$e->getMessage();
         }

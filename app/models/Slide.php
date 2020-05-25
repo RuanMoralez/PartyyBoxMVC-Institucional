@@ -38,4 +38,54 @@ class Slide extends Model {
             echo "Erro: ".$e->getMessage();
         }
     }
+    
+    
+    public function listar(){
+        try{
+            
+            $query = "
+                SELECT *
+                FROM slide 
+            ";
+            
+            $res = $this->db->query($query);
+            $res->execute();
+            
+            return $res->fetchAll();
+            
+        }catch(Excecption $e){
+            echo "Erro: ".$e->getMessage();
+        }
+    }
+    
+    public function atualizar($id,$titulo,$descricao,$endereco){
+        try{
+            
+            $stmt = $this->db->prepare('
+                UPDATE slide SET 
+                titulo = :titulo,
+                descricao = :descricao,
+                endereco = :endereco,
+                WHERE id = :id
+            ');
+            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':titulo', $titulo);
+            $stmt->bindParam(':descricao', $descricao);
+            $stmt->bindParam(':endereco', $endereco);
+            $stmt->execute();        
+            
+        }catch(Exception $e){
+            echo "Erro: ".$e->getMessage();
+        }
+    }
+    
+    public function remover($id){
+        $stmt = $this->db->prepare('
+            DELETE
+            FROM slide 
+            WHERE id = :id
+        ');
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+    }
 }

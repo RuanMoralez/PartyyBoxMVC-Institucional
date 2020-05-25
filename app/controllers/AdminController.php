@@ -32,8 +32,12 @@ class AdminController extends Controller{
     }
     
     public function index($nume=0){
-        //$dado["view"] = "adm/edit/carrosel";
-        $this->load("adm/edit/carrosel",$dado=array());
+        
+        $slide = new Slide();
+        
+        $dado['slide']= $slide->listar();
+        $this->load("adm/edit/carrosel",$dado);
+        
     }
     
     public function categoria($num=1){
@@ -206,7 +210,7 @@ class AdminController extends Controller{
         $categoria_id = $_POST['categoria'];
         $imagem = "";
         
-        if( $categoria_id >= 1 && $categoria_id <= 3 ){
+        if( $categoria_id >= 1 && $categoria_id <= 4 ){
            
             $img = array_filter($_FILES['img']);
             
@@ -227,8 +231,10 @@ class AdminController extends Controller{
                         $caminho_imagem =  "assets/img/festa_caixa/".$nome_imagem;
                     }else if($categoria_id == 2){
                         $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
-                    }else {
+                    }else if($categoria_id == 3){
                         $caminho_imagem =  "assets/img/buque_chocolate/".$nome_imagem;
+                    }else {
+                        $caminho_imagem =  "assets/img/caixote/".$nome_imagem;
                     }
                     
                     move_uploaded_file($img['tmp_name'], $caminho_imagem);    
@@ -249,7 +255,7 @@ class AdminController extends Controller{
                 <script>    
                 
                     swal({
-                        title: "Sucesso/!",
+                        title: "Sucesso!",
                         text: "Sessao edita com sucesso...",
                         icon: "success"
                     })
@@ -265,7 +271,6 @@ class AdminController extends Controller{
                 ';
         }
     }
-    
     
     public function adicionarSlide(){
       
@@ -303,8 +308,10 @@ class AdminController extends Controller{
                 
                                 swal({
                                     title: "Sucesso!",
-                                    text: "Sessao edita com sucesso...",
+                                    text: "Slide adicionado...",
                                     icon: "success"
+                                }).then( function (){
+                                    location.reload();
                                 });
                             </script>
                         ';
@@ -324,6 +331,77 @@ class AdminController extends Controller{
         }
 
     }
+    
+    public function atualizarSlide(){
+        if( $_POST){
+           
+            $img = array_filter($_FILES['img']);
+            $imagem = "";
+            
+            if(!isset($img['error'])){
+                $error = array();
+                
+                if(!\preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $img["type"])){
+                    $error[1] = "Isso não é uma imagem.";
+                } 
+                
+                if(count($error)==0){
+                    
+                    preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
+                    
+                    $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+                    
+                    $caminho_imagem =  "assets/img/slide/".$nome_imagem;
+                    
+                    move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                
+                    $imagem = $caminho_imagem;
+                }
+            }else{
+                $imagem = $_POST['default'];
+            }
+        
+            $id = $_POST['id'];
+            $titulo = $_POST['titulo'];
+            $descricao = nl2br($_POST['descricao']);
+            
+            $slide = new Slide();
+            $slide->atualizar($id,$imagem, $titulo, $descricao);
+            
+            echo '
+                <script>    
+                
+                    swal({
+                        title: "Sucesso!",
+                        text: "Slide atualizado com sucesso...",
+                        icon: "success"
+                    })
+                </script>
+                ';
+        }
+    }
+    
+    public function removerSlide(){
+        if($_POST){
+            $id = $_POST['id'];
+            
+            $slide = new Slide();
+            $slide->remover($id);
+            
+            echo '
+                <script>    
+                
+                    swal({
+                        title: "Sucesso!",
+                        text: "Slide removido...",
+                        icon: "success"
+                    })
+                </script>
+            ';
+            
+        }        
+    }
+            
     public function doLogout($token){
         $token_session = md5(session_id());
         if(isset($token) && $token === $token_session){

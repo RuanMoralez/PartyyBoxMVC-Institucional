@@ -138,32 +138,62 @@
     -->
     <div id="carouselExampleIndicators" class="carousel slide none-slide" data-ride="carousel">
       <ol class="carousel-indicators indicador">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <?php
+            foreach($slide as $key => $s){
+              if($key > 0 ){
+                echo '
+                <li data-target="#carouselExampleIndicators" data-slide-to="'.$key.'"></li>
+                ';
+              }
+              
+            }
+          ?>
+        
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active slide-box box1" alt="First slide">
+        <div class="carousel-item active slide-box box1" style="background-image: url('<?php echo URL_BASE.$slide[0]['endereco']?>')" alt="First slide">
           <!-- <img class="d-block w-100" src="img/partyybox_felizAniversario2.png" alt="First slide"> -->
           <div class="carousel-caption d-md-block slide-texto wow bounceInLeft" data-wow-delay="0.5s">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5><?php echo $slide[0]['titulo']?></h5>
+            <p><?php echo $slide[0]['descricao']?></p>
           </div>
+
+          <?php 
+            foreach($slide as $key => $s){
+              if($key > 0 ){
+                echo '
+                  <div class="carousel-item slide-box box2" style="background-image: url('.URL_BASE.$s['endereco'].')" alt="First slide">
+                  <!-- <img class="d-block w-100" src="img/partyybox_panda.png" alt="Second slide"> -->
+                    <div class="carousel-caption d-md-block slide-texto wow bounceInRight" data-wow-delay="0.5s">
+                      <h5>'.$s['titulo'].'</h5>
+                      <p>'.$s['descricao'].'</p>
+                    </div>
+                  </div>    
+                ';
+              }  
+            }
+          ?>
         </div>
+
+
+        <!--
         <div class="carousel-item slide-box box2" alt="First slide">
-          <!-- <img class="d-block w-100" src="img/partyybox_panda.png" alt="Second slide"> -->
+           
           <div class="carousel-caption d-md-block slide-texto wow bounceInRight" data-wow-delay="0.5s">
             <h5>Second slide label</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
         <div class="carousel-item slide-box box3" alt="First slide">
-          <!-- <img class="d-block w-100" src="img/partyybox_lol.png" alt="Third slide"> -->
           <div class="carousel-caption d-md-block slide-texto wow bounceInLeft" data-wow-delay="0.5s">
             <h5>Second slide label</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
+        -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -182,31 +212,54 @@
       <div id="carouselExampleIndicatorsdesktop" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators indicador">
           <li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="2"></li>
+          <?php
+            foreach($slide as $key => $s){
+              if($key > 0 ){
+                echo '
+                  <li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="'.$key.'"></li>        
+                ';
+              }
+              
+            }
+          ?>
+          
+          <!--<li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="1"></li>-->
+          <!--<li data-target="#carouselExampleIndicatorsdesktop" data-slide-to="2"></li>-->
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active slide-box box1" alt="First slide">
+          <div class="carousel-item active slide-box box1" style="background-image: url('<?php echo URL_BASE.$slide[0]['endereco']?>')" alt="First slide">
             <!-- <img class="d-block w-100" src="img/partyybox_felizAniversario2.png" alt="First slide"> -->
             <div class="carousel-caption d-md-block slide-texto wow bounceInLeft" data-wow-delay="0.5s">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h5><?php echo $slide[0]['titulo']?></h5>
+              <p><?php echo $slide[0]['descricao']?></p>
             </div>
           </div>
-          <div class="carousel-item slide-box box2" alt="First slide">
-            <!-- <img class="d-block w-100" src="img/partyybox_panda.png" alt="Second slide"> -->
-            <div class="carousel-caption d-md-block slide-texto wow bounceInRight" data-wow-delay="0.5s">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
+          
+          <?php 
+            foreach($slide as $key => $s){
+              if($key > 0 ){
+                echo '
+                  <div class="carousel-item slide-box box2" style="background-image: url('.URL_BASE.$s['endereco'].')" alt="First slide">
+                  <!-- <img class="d-block w-100" src="img/partyybox_panda.png" alt="Second slide"> -->
+                    <div class="carousel-caption d-md-block slide-texto wow bounceInRight" data-wow-delay="0.5s">
+                      <h5>'.$s['titulo'].'</h5>
+                      <p>'.$s['descricao'].'</p>
+                    </div>
+                  </div>    
+                ';
+              }  
+            }
+          ?>
+          
+          <!-- 
           <div class="carousel-item slide-box box3" alt="First slide">
-            <!-- <img class="d-block w-100" src="img/partyybox_lol.png" alt="Third slide"> -->
+            <img class="d-block w-100" src="img/partyybox_lol.png" alt="Third slide"> 
             <div class="carousel-caption d-md-block slide-texto wow bounceInLeft" data-wow-delay="0.5s">
               <h5>Second slide label</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
+          -->
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicatorsdesktop" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -398,7 +451,7 @@
 
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">    
           <?php
-
+            
             foreach ( $produto as $key => $buque){
                 if($buque['id_categoria'] == 3){
                     echo ' 
@@ -419,6 +472,78 @@
         </div>
       </div>
     </div>
+
+
+    <!----  
+        ****** Sessao Cafe no caixote ******
+    -->
+    <div class="conteudo-sobre remove-scroll" id="ancora-festa-na-caixa">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-5 col-lg-5 wow slideInLeft" >
+          <img class="img-fluid" src="<?php echo URL_BASE.$categoria[3]['categoria_endereco'] ?>" alt="">
+        </div>
+        <div class="col-12 col-sm-6 col-md-7 col-lg-5 wow slideInRight">
+          <h3><?php echo $categoria[3]['categoria_titulo']?></h3>
+          <p><?php echo $categoria[3]['categoria_descricao'] ?></p><br><br>
+          <a href="#" class="modal-saiba-mais">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <!----  
+    ****** Lista de produtos (Caixa) ******
+    -->
+    
+    <div class="container-fluid remove-scroll produto-caixa-desktop">
+      <div class="row wow slideInRight" data-wow-delay="0.5s">
+        
+        <?php
+            foreach ($produto as $key => $caixote){
+                if($caixote['id_categoria'] == 4){
+                    echo '
+                        <div class="col-12 col-sm-6 col-md-4 produto-mobile">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.'/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$caixote['titulo'].'</h3>
+                                    <p>'.$caixote['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                }
+            }
+        ?>
+        
+        <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">
+        <?php
+            foreach ($produto as $key => $caixote){
+                if($caixote['id_categoria'] == 4){
+                    echo '
+                        <div class="col-md-3">
+                            <div class="lista-produto">
+                                <div style="background:url('.URL_BASE.'/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div class="descricao-produto">
+                                    <h3>'.$caixote['titulo'].'</h3>
+                                    <p>'.$caixote['descricao'].'</p>
+                                    <a href="#" class="modal-saiba-mais">saiba mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                }
+            }
+        ?>
+        </div>
+
+
+      </div>
+    </div>
+
 
     <!----  
       ****** Vantagens ******

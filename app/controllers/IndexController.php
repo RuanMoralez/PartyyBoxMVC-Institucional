@@ -10,6 +10,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Produto;
 use app\models\Categoria;
+use app\models\Slide;
 
 /**
  * Description of IndexController
@@ -22,10 +23,12 @@ class IndexController extends Controller{
         
         $p = new Produto();
         $c = new Categoria();
+        $s = new Slide();
         
         $data = array(
-            "produto" => $p->listar(),
-            "categoria" => $c->listar()
+            "produto" =>    $p->listar(),
+            "categoria" =>  $c->listar(),
+            "slide" =>      $s->listar()
         );
         
         $this->load('template',$data);  
