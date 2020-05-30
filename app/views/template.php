@@ -300,11 +300,11 @@
         
         <?php
             foreach ($produto as $key => $caixa){
-                if($caixa['id_categoria'] == 1){
+                if($caixa['categoria'] == 1){
                     echo '
                         <div class="col-12 col-sm-6 col-md-4 produto-mobile">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$caixa['titulo'].'</h3>
                                     <p>'.$caixa['descricao'].'</p>
@@ -320,11 +320,11 @@
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">
         <?php
             foreach ($produto as $key => $caixa){
-                if($caixa['id_categoria'] == 1){
+                if($caixa['categoria'] == 1){
                     echo '
                         <div class="col-md-3">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$caixa['titulo'].'</h3>
                                     <p>'.$caixa['descricao'].'</p>
@@ -366,11 +366,11 @@
         
         <?php
           foreach ( $produto as $key => $cesta){
-              if($cesta['id_categoria'] == 2){
+              if($cesta['categoria'] == 2){
                 echo ' 
                     <div class="col-12 col-sm-6 col-md-4 produto-mobile">
                         <div class="lista-produto">
-                            <div style="background:url('.URL_BASE.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                            <div style="background:url('.URL_BASE.'assets/'.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                             <div class="descricao-produto">
                                 <h3>'.$cesta['titulo'].'</h3>
                                 <p>'.$cesta['descricao'].'</p>
@@ -387,11 +387,11 @@
         <?php
         
             foreach ( $produto as $key => $cesta){
-                if($cesta['id_categoria'] == 2){
+                if($cesta['categoria'] == 2){
                     echo ' 
                         <div class="col-md-3">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$cesta['titulo'].'</h3>
                                     <p>'.$cesta['descricao'].'</p>
@@ -432,11 +432,11 @@
 
         <?php
             foreach($produto as $key => $buque){
-                if($buque['id_categoria'] == 3){
+                if($buque['categoria'] == 3){
                     echo ' 
                         <div class="col-12 col-sm-6 col-md-4 produto-mobile">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$buque['titulo'].'</h3>
                                     <p>'.$buque['descricao'].'</p>
@@ -453,11 +453,11 @@
           <?php
             
             foreach ( $produto as $key => $buque){
-                if($buque['id_categoria'] == 3){
+                if($buque['categoria'] == 3){
                     echo ' 
                         <div class="col-md-3 ">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$buque['titulo'].'</h3>
                                     <p>'.$buque['descricao'].'</p>
@@ -490,9 +490,6 @@
       </div>
     </div>
 
-
-    
-
     <!----  
     ****** Lista de produtos (Caixa) ******
     -->
@@ -502,11 +499,11 @@
         
         <?php
             foreach ($produto as $key => $caixote){
-                if($caixote['id_categoria'] == 4){
+                if($caixote['categoria'] == 4){
                     echo '
                         <div class="col-12 col-sm-6 col-md-4 produto-mobile">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$caixote['titulo'].'</h3>
                                     <p>'.$caixote['descricao'].'</p>
@@ -522,11 +519,11 @@
         <div class="carrosel-produto" style="width: 95%; margin-left:3%; ">
         <?php
             foreach ($produto as $key => $caixote){
-                if($caixote['id_categoria'] == 4){
+                if($caixote['categoria'] == 4){
                     echo '
                         <div class="col-md-3">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets/'.$caixote['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$caixote['titulo'].'</h3>
                                     <p>'.$caixote['descricao'].'</p>

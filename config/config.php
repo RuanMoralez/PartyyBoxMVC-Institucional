@@ -1,7 +1,10 @@
 <?php
 
 define('SERVER', 'localhost');
+
 define('DATABASE', 'partyybox');
+define('DATABASE_LOJA', 'pblaravel');
+
 define('USER', 'root');
 define('PASS', '');
 

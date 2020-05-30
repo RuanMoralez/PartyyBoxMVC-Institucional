@@ -15,10 +15,10 @@ class Produto extends Model{
                 ,titulo
                 ,descricao
                 ,endereco
-                ,id_categoria
-             FROM produto
+                ,categoria
+             FROM produtos
              ORDER BY id" ;
-        $res = $this->db->query($query);
+        $res = $this->db_loja->query($query);
                 
         return $res->fetchAll();
     }
@@ -30,11 +30,11 @@ class Produto extends Model{
                 ,titulo
                 ,descricao
                 ,endereco
-                ,id_categoria
-             FROM produto
-             WHERE id_categoria = {$num}
+                ,categoria
+             FROM produtos
+             WHERE categoria = {$num}
              ORDER BY id" ;
-        $res = $this->db->query($query);
+        $res = $this->db_loja->query($query);
                 
         return $res->fetchAll();
     }
@@ -42,8 +42,8 @@ class Produto extends Model{
     public function inserir($titulo,$descricao,$endereco,$categoria){
         try{
             
-            $stmt = $this->db->prepare("
-                INSERT INTO Produto (titulo, descricao, endereco, id_categoria)
+            $stmt = $this->db_loja->prepare("
+                INSERT INTO produtos (titulo, descricao, endereco, categoria)
                 VALUES (:titulo, :descricao, :endereco, :categoria)
             ");
             $stmt->execute(array(
@@ -60,8 +60,8 @@ class Produto extends Model{
     
     public function atualizar($id,$titulo,$descricao,$endereco){
         try{
-            $stmt = $this->db->prepare("
-            UPDATE Produto SET
+            $stmt = $this->db_loja->prepare("
+            UPDATE Produtos SET
             titulo = :titulo,
             descricao = :descricao,
             endereco = :endereco
@@ -81,8 +81,8 @@ class Produto extends Model{
     public function remover($id){
         try{
             
-            $stmt = $this->db->prepare("
-                DELETE FROM Produto WHERE id = :id
+            $stmt = $this->db_loja->prepare("
+                DELETE FROM produtos WHERE id = :id
             ");
             $res = $stmt->execute(array(
                 ':id' => $id

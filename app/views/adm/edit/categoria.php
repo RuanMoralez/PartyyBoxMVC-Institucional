@@ -111,7 +111,7 @@
                   echo ' 
                     <div class="col-md-3">
                       <div class="lista-produto">
-                        <div style="background:url('.URL_BASE.'/'.$p['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                        <div style="background:url('.URL_BASE.'assets'.$p['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                         <div class="descricao-produto">
 
                           <h3>'.$p['titulo'].'</h3>
@@ -134,6 +134,7 @@
                                   <label for="exampleFormControlTextarea1">Título</label>
                                   <input class="form-control" type="text" name="titulo" value="'.$p['titulo'].'">
                                   <input type="hidden" id="custId" name="id" value="'.$p['id'].'">
+                                  <input type="hidden" id="custId" name="categoria" value="'.$p['categoria'].'">
                                 </div>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
@@ -144,9 +145,9 @@
                                   <div class="custom-file">
                                     <input type="file" class="custom-file-input" onchange="readURL(this,'.$id.');" name="img">
                                     <label style="width:300px; text-align:left; margin-left:18%"; class="custom-file-label">Trocar imagem</label>
-                                    <input type="hidden" id="custId" name="default" value="/'.$p['endereco'].'">
+                                    <input type="hidden" id="custId" name="default" value="'.$p['endereco'].'">
                                   </div>
-                                  <img id="blah'.$id.'" src="'.URL_BASE.'/'.$p['endereco'].'" alt="your image" />                                    
+                                  <img id="blah'.$id.'" src="'.URL_BASE.'assets'.$p['endereco'].'" alt="your image" />                                    
                                   <div class="form-group edit-descricao">
                                     <label for="exampleFormControlTextarea1">Descrição</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="descricao">'.$p['descricao'].'</textarea>

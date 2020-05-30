@@ -16,8 +16,10 @@ namespace app\core;
 abstract class Model {
     
     protected $db;
+    protected $db_loja;
     
     public function __construct() {
         $this->db = new \PDO("mysql:dbname=".DATABASE.";host=".SERVER, USER, PASS);
+        $this->db_loja = new \PDO("mysql:dbname=".DATABASE_LOJA.";host=".SERVER, USER, PASS);
     }
 }

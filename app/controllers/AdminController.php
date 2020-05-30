@@ -57,9 +57,9 @@ class AdminController extends Controller{
                   
         if($_POST){
             
-            $categoria = $_POST['categoria'];
+            $categoria_id = $_POST['categoria'];
             
-            if($categoria != 0){
+            if($categoria_id != 0){
                 
                 if( !empty($_FILES['img']['name']) && !empty($_POST['titulo']) && !empty($_POST['descricao'])){
                     $img = array_filter($_FILES['img']);
@@ -76,19 +76,26 @@ class AdminController extends Controller{
                         preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
                     
                         $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-                
-                        $caminho_imagem =  "assets/img/festa_caixa/". $nome_imagem;
-                
+                        
+                        if($categoria_id == 1){
+                            $caminho_imagem =  "assets/img/caixa/".$nome_imagem;
+                        }else if($categoria_id == 2){
+                            $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
+                        }else if($categoria_id == 3){
+                            $caminho_imagem =  "assets/img/buque/".$nome_imagem;
+                        }else {
+                            $caminho_imagem =  "assets/img/caixote/".$nome_imagem;
+                        }
+                        
                         move_uploaded_file($img['tmp_name'], $caminho_imagem);    
                 
                         $imagem = $caminho_imagem;
                         
                         $titulo = $_POST['titulo'];
                         $descricao = $_POST['descricao'];
-                        $categoria = $_POST['categoria'];
                         
                         $produto = new Produto();
-                        $produto->inserir($titulo, $descricao, $imagem,$categoria);
+                        $produto->inserir($titulo, $descricao, $imagem,$categoria_id);
                         
                         echo '
                             <script>
@@ -179,10 +186,20 @@ class AdminController extends Controller{
                     preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $img["name"], $ext);
                     
                     $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
-                
-                    $caminho_imagem =  "assets/img/festa_caixa/". $nome_imagem;
-                
-                    move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                    
+                    $categoria_id = $_POST['categoria'];
+
+                    if($categoria_id == 1){
+                        $caminho_imagem =  "/img/caixa/".$nome_imagem;
+                    }else if($categoria_id == 2){
+                        $caminho_imagem =  "/img/cesta/".$nome_imagem;
+                    }else if($categoria_id == 3){
+                        $caminho_imagem =  "/img/buque/".$nome_imagem;
+                    }else {
+                        $caminho_imagem =  "/img/caixote/".$nome_imagem;
+                    }
+                    
+                    move_uploaded_file($img['tmp_name'], 'assets'.$caminho_imagem);    
                 
                     $imagem = $caminho_imagem;
                 }
@@ -193,9 +210,7 @@ class AdminController extends Controller{
             $titulo = $_POST['titulo'];
             $descricao = $_POST['descricao'];
             $id = $_POST['id'];
-        
-        
-        
+            
             $produto = new Produto();
             $produto->atualizar($id, $titulo, $descricao, $imagem);
         
@@ -228,11 +243,11 @@ class AdminController extends Controller{
                     $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                     
                     if($categoria_id == 1){
-                        $caminho_imagem =  "assets/img/festa_caixa/".$nome_imagem;
+                        $caminho_imagem =  "assets/img/caixa/".$nome_imagem;
                     }else if($categoria_id == 2){
                         $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
                     }else if($categoria_id == 3){
-                        $caminho_imagem =  "assets/img/buque_chocolate/".$nome_imagem;
+                        $caminho_imagem =  "assets/img/buque/".$nome_imagem;
                     }else {
                         $caminho_imagem =  "assets/img/caixote/".$nome_imagem;
                     }
