@@ -41,7 +41,7 @@
                         <img id="insertUpdate" style="width:100%; height:100%" src="<?php
                         
                           if(!empty($categoria[0]['categoria_endereco'])){
-                            echo URL_BASE.$categoria[0]['categoria_endereco'];
+                            echo URL_BASE.'assets/'.$categoria[0]['categoria_endereco'];
                           }else{
                             echo URL_BASE."assets/adm/img/essenciais/no_imagem_available.png";
                           }

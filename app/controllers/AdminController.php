@@ -78,16 +78,16 @@ class AdminController extends Controller{
                         $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                         
                         if($categoria_id == 1){
-                            $caminho_imagem =  "assets/img/caixa/".$nome_imagem;
+                            $caminho_imagem =  "/img/caixa/".$nome_imagem;
                         }else if($categoria_id == 2){
-                            $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
+                            $caminho_imagem =  "/img/cesta/".$nome_imagem;
                         }else if($categoria_id == 3){
-                            $caminho_imagem =  "assets/img/buque/".$nome_imagem;
+                            $caminho_imagem =  "/img/buque/".$nome_imagem;
                         }else {
-                            $caminho_imagem =  "assets/img/caixote/".$nome_imagem;
+                            $caminho_imagem =  "/img/caixote/".$nome_imagem;
                         }
                         
-                        move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                        move_uploaded_file($img['tmp_name'],'assets'.$caminho_imagem);    
                 
                         $imagem = $caminho_imagem;
                         
@@ -243,16 +243,16 @@ class AdminController extends Controller{
                     $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                     
                     if($categoria_id == 1){
-                        $caminho_imagem =  "assets/img/caixa/".$nome_imagem;
+                        $caminho_imagem =  "/img/caixa/".$nome_imagem;
                     }else if($categoria_id == 2){
-                        $caminho_imagem =  "assets/img/cesta/".$nome_imagem;
+                        $caminho_imagem =  "/img/cesta/".$nome_imagem;
                     }else if($categoria_id == 3){
-                        $caminho_imagem =  "assets/img/buque/".$nome_imagem;
+                        $caminho_imagem =  "/img/buque/".$nome_imagem;
                     }else {
-                        $caminho_imagem =  "assets/img/caixote/".$nome_imagem;
+                        $caminho_imagem =  "/img/caixote/".$nome_imagem;
                     }
                     
-                    move_uploaded_file($img['tmp_name'], $caminho_imagem);    
+                    move_uploaded_file($img['tmp_name'], 'assets'.$caminho_imagem);    
                 
                     $imagem = $caminho_imagem;
                 }

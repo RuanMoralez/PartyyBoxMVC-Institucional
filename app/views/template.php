@@ -90,7 +90,7 @@
                 </li>            
                 <li><a  href="#ancora-vantagens">Vantagens</a></li>
                 <li><a  href="#ancora-comentarios">Comentarios</a></li>
-                <li><a  href="#">Loja</a></li>
+                <li><a  href="http://127.0.0.1:8000/">Loja</a></li>
                 <li><a  href="#ancora-contato">Contato</a></li>
               </ul>
             </div>
@@ -116,7 +116,7 @@
       <div class="row">
         <div class="col-md-12 menu-desktop-align" >
           <ul class="menu-desktop">
-            <li><a href="#">Loja</a></li>
+            <li><a href="http://127.0.0.1:8000/">Loja</a></li>
             <li>
                 <a class="dropdown show dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sobre</a>
                 <div class="dropdown-menu dropdown-desktop dropdown-sobre" aria-labelledby="dropdownMenuLink">
@@ -278,7 +278,7 @@
     <div class="conteudo-sobre remove-scroll" id="ancora-festa-na-caixa">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-5 col-lg-5 wow slideInLeft" >
-          <img class="img-fluid" src="<?php echo URL_BASE.$categoria[0]['categoria_endereco'] ?>" alt="">
+          <img class="img-fluid" src="<?php echo URL_BASE.'assets'.$categoria[0]['categoria_endereco'] ?>" alt="">
         </div>
         <div class="col-12 col-sm-6 col-md-7 col-lg-5 wow slideInRight">
           <h3><?php echo $categoria[0]['categoria_titulo']?></h3>
@@ -324,7 +324,7 @@
                     echo '
                         <div class="col-md-3">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'assets/'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets'.$caixa['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$caixa['titulo'].'</h3>
                                     <p>'.$caixa['descricao'].'</p>
@@ -348,7 +348,7 @@
     <div class="conteudo-sobre cesta remove-scroll" id="ancora-cesta-cafe-manha">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-5 col-lg-5">
-          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE.$categoria[1]['categoria_endereco']?>" alt="">
+          <img class="img-fluid circular wow slideInLeft" src="<?php echo URL_BASE.'assets'.$categoria[1]['categoria_endereco']?>" alt="">
         </div>
         <div class="col-12 col-sm-12 col-md-7 col-lg-5 wow slideInRight">
           <h3><?php echo $categoria[1]['categoria_titulo']?></h3>
@@ -391,7 +391,7 @@
                     echo ' 
                         <div class="col-md-3">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'assets/'.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets'.$cesta['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$cesta['titulo'].'</h3>
                                     <p>'.$cesta['descricao'].'</p>
@@ -414,7 +414,7 @@
       <div class="row">
         <div class="col-12">
           <h3 class="wow slideInDown"><?php if(!empty($categoria[2]['categoria_titulo'])){ echo $categoria[2]['categoria_titulo'];}else{ echo "Nao cadastrado";} ?></h3>
-          <img class="wow slideInLeft" src="<?php if(!empty($categoria[2]['categoria_endereco'])){ echo $categoria[2]['categoria_endereco'];}else{ echo "Nao cadastrado";} ?>" alt="">
+          <img class="wow slideInLeft" src="<?php if(!empty($categoria[2]['categoria_endereco'])){ echo URL_BASE.'assets'.$categoria[2]['categoria_endereco'];}else{ echo "Nao cadastrado";} ?>" alt="">
           <div class="wow slideInRight">
             <p><?php if(!empty($categoria[2]['categoria_descricao'])){ echo $categoria[2]['categoria_descricao'];}else{ echo "Nao cadastrado";} ?></p><br><br   >
             <a href="#buque-chocolate" class="modal-saiba-mais">Saiba mais</a>
@@ -457,7 +457,7 @@
                     echo ' 
                         <div class="col-md-3 ">
                             <div class="lista-produto">
-                                <div style="background:url('.URL_BASE.'assets/'.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
+                                <div style="background:url('.URL_BASE.'assets'.$buque['endereco'].');background-size: 100%;background-position: center;background-repeat: no-repeat;height: 200px;"></div>
                                 <div class="descricao-produto">
                                     <h3>'.$buque['titulo'].'</h3>
                                     <p>'.$buque['descricao'].'</p>
@@ -480,7 +480,7 @@
     <div class="conteudo-sobre remove-scroll" id="ancora-festa-na-caixa">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-5 col-lg-5 wow slideInLeft" >
-          <img class="img-fluid" src="<?php echo URL_BASE.$categoria[3]['categoria_endereco'] ?>" alt="">
+          <img class="img-fluid" src="<?php echo URL_BASE.'assets'.$categoria[3]['categoria_endereco'] ?>" alt="">
         </div>
         <div class="col-12 col-sm-6 col-md-7 col-lg-5 wow slideInRight">
           <h3><?php echo $categoria[3]['categoria_titulo']?></h3>
